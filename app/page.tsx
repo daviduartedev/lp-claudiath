@@ -1,288 +1,326 @@
-const approaches = [
+import ScrollExperience from "./scroll-experience";
+
+const process = [
   {
-    number: "01",
-    title: "Psicologia Intercultural",
-    text: "Um olhar atento para a forma como cultura, pertencimento e identidade atravessam a sua experiência.",
+    index: "01",
+    verb: "Escutar",
+    title: "Antes de qualquer método, existe uma história.",
+    text: "Começamos com uma escuta atenta da sua história de vida e profissional — do que mudou, do que permaneceu e do que ainda não encontrou nome.",
   },
   {
-    number: "02",
-    title: "EMDR",
-    text: "Quando indicado, favorece o processamento de experiências emocionalmente marcantes e a autorregulação.",
+    index: "02",
+    verb: "Mapear",
+    title: "O contexto também fala.",
+    text: "Observamos o contexto cultural, os relacionamentos, os fatores de estresse e os recursos emocionais disponíveis. Nada é analisado fora da vida real.",
   },
   {
-    number: "03",
-    title: "Brainspotting",
-    text: "Uma abordagem que apoia o acesso e o processamento de experiências profundas com cuidado e segurança.",
+    index: "03",
+    verb: "Processar",
+    title: "Técnica a serviço da sua singularidade.",
+    text: "A partir dessa compreensão, construímos um plano terapêutico individualizado, integrando Psicologia Intercultural, EMDR e Brainspotting quando indicados.",
+  },
+  {
+    index: "04",
+    verb: "Integrar",
+    title: "Não voltar a ser quem era. Voltar a ser sua.",
+    text: "O processo fortalece recursos internos, autorregulação e flexibilidade psicológica para que a mudança deixe de ser apenas ruptura e possa ganhar sentido.",
   },
 ];
 
-const processSteps = [
+const methods = [
   {
-    number: "I",
-    title: "Escuta",
-    text: "Começamos pela sua história, pelo que está acontecendo agora e pelo que você deseja transformar.",
+    index: "01",
+    title: "Psicologia Intercultural",
+    text: "Para compreender o que acontece quando identidade, cultura e pertencimento deixam de ocupar o mesmo lugar.",
   },
   {
-    number: "II",
-    title: "Compreensão",
-    text: "Observamos contexto cultural, relações, trabalho, fatores de estresse e recursos emocionais disponíveis.",
+    index: "02",
+    title: "EMDR",
+    text: "Para favorecer o processamento de experiências emocionalmente marcantes e ampliar a capacidade de autorregulação.",
   },
   {
-    number: "III",
-    title: "Plano terapêutico",
-    text: "Construímos um caminho individualizado, integrando as abordagens mais adequadas ao seu momento.",
-  },
-  {
-    number: "IV",
-    title: "Integração",
-    text: "Fortalecemos autonomia, flexibilidade e novas possibilidades de viver com equilíbrio e autenticidade.",
+    index: "03",
+    title: "Brainspotting",
+    text: "Para acessar experiências profundas com presença, segurança e respeito ao ritmo do seu sistema emocional.",
   },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <a className="brand" href="#inicio" aria-label="Claudia Thirion — início">
-          <span>CT</span>
-          <span className="brand-name">Claudia Thirion</span>
+    <main id="inicio">
+      <ScrollExperience />
+
+      <header className="header" id="site-header">
+        <a className="wordmark" href="#inicio" aria-label="Claudia Thirion — início">
+          <span className="wordmark__mark">C<span>/</span>T</span>
+          <span className="wordmark__name">Claudia<br />Thirion</span>
         </a>
 
-        <nav aria-label="Navegação principal">
-          <a href="#atendimento">Atendimento</a>
-          <a href="#abordagens">Abordagens</a>
-          <a href="#sobre">Para quem</a>
+        <nav className="header__nav" aria-label="Navegação principal">
+          <a href="#travessia"><span>01</span> A travessia</a>
+          <a href="#processo"><span>02</span> O processo</a>
+          <a href="#abordagens"><span>03</span> Abordagens</a>
         </nav>
 
-        <a className="header-link" href="#atendimento">
-          Conheça o processo <span aria-hidden="true">↘</span>
+        <a className="header__cta magnetic" data-magnetic href="#convite">
+          <span>Quero conversar</span>
+          <span className="header__cta-arrow" aria-hidden="true">↗</span>
         </a>
       </header>
 
-      <section className="hero" id="inicio" aria-labelledby="hero-title">
-        <div className="hero-topline">
-          <span>Psicologia intercultural</span>
-          <span className="line" aria-hidden="true" />
-          <span className="spark" aria-hidden="true">✦</span>
-          <span>Transições • pertencimento • sentido</span>
-        </div>
+      <div className="scroll-progress" aria-hidden="true"><span /></div>
 
-        <h1 id="hero-title" aria-label="Claudia Thirion">
-          <span>Claudia</span>
-          <span>Thirion</span>
-        </h1>
-
-        <div className="hero-copy">
-          <p className="eyebrow">Psicologia para grandes mudanças</p>
-          <p>
-            Acompanho pessoas que vivem grandes transições de vida — pessoais,
-            profissionais e interculturais.
-          </p>
-        </div>
-
-        <div className="hero-portrait" aria-hidden="true">
-          <div className="portrait-halo" />
+      <section className="hero" aria-labelledby="hero-title">
+        <div className="hero__media" aria-hidden="true">
           <img
-            src="/images/claudia-retrato.png"
+            src="/images/claudia-hero-wide.jpg"
             alt=""
-            width="1024"
-            height="1536"
+            width="2560"
+            height="1440"
             fetchPriority="high"
           />
         </div>
+        <div className="hero__veil" aria-hidden="true" />
 
-        <a className="round-link" href="#atendimento" aria-label="Ir para como funciona o atendimento">
-          <span aria-hidden="true">↓</span>
-          Como funciona
-        </a>
-
-        <p className="hero-note">
-          Mudanças podem abrir caminhos de crescimento, pertencimento e sentido.
-        </p>
-      </section>
-
-      <section className="intro" aria-labelledby="intro-title">
-        <div className="section-kicker light">
-          <span>Uma escuta inteira</span>
-          <span aria-hidden="true">✦</span>
-          <span>Um caminho singular</span>
+        <div className="hero__micro hero__micro--top">
+          <span>Psicologia intercultural</span>
+          <span>Grandes transições de vida</span>
         </div>
 
-        <div className="intro-grid">
-          <div className="intro-title-wrap">
-            <p className="eyebrow">O ponto de partida</p>
-            <h2 id="intro-title">
-              Voltar a se sentir
-              <em> você mesma.</em>
+        <div className="hero__title-wrap">
+          <p className="hero__pretitle" data-reveal>Para quem mudou por fora — e ainda está se encontrando por dentro.</p>
+          <h1 id="hero-title">
+            <span className="hero__line hero__line--solid" data-hero-line>Entre</span>
+            <span className="hero__line hero__line--outline" data-hero-line>mundos,</span>
+            <span className="hero__line hero__line--italic" data-hero-line>inteira.</span>
+          </h1>
+        </div>
+
+        <div className="hero__bottom">
+          <p data-reveal>
+            Acompanho pessoas que vivem grandes transições — pessoais,
+            profissionais e interculturais — a transformar mudanças em caminhos
+            de crescimento, pertencimento e sentido.
+          </p>
+          <a className="circle-cta magnetic" data-magnetic href="#processo">
+            <span>Conhecer o<br />atendimento</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <div className="hero__index" aria-hidden="true">
+          <span>CT®</span>
+          <span>2026</span>
+        </div>
+      </section>
+
+      <div className="signal" aria-hidden="true">
+        <div className="signal__track">
+          <span>MIGRAÇÃO</span><i>✳</i><span>IDENTIDADE</span><i>✳</i>
+          <span>PERTENCIMENTO</span><i>✳</i><span>TRANSIÇÃO</span><i>✳</i>
+          <span>MIGRAÇÃO</span><i>✳</i><span>IDENTIDADE</span><i>✳</i>
+          <span>PERTENCIMENTO</span><i>✳</i><span>TRANSIÇÃO</span><i>✳</i>
+        </div>
+      </div>
+
+      <section className="travessia" id="travessia" aria-labelledby="travessia-title">
+        <div className="travessia__label rail-label">
+          <span>01</span>
+          <span>A travessia</span>
+        </div>
+
+        <div className="travessia__statement">
+          <p className="overline" data-reveal>O que escuto no consultório</p>
+          <h2 id="travessia-title" data-reveal>
+            “Quero voltar a me sentir
+            <span className="word-shift">eu mesma.</span>”
+          </h2>
+          <p className="travessia__echo" data-reveal>
+            “Não sei por que estou tão cansada, irritada ou sem direção.”
+          </p>
+        </div>
+
+        <div className="travessia__aside" data-reveal>
+          <span className="asterisk" aria-hidden="true">✳</span>
+          <p>
+            Cada pessoa chega com uma história única. Por isso, meu atendimento
+            não segue fórmulas prontas — ele começa onde você está.
+          </p>
+        </div>
+
+        <div className="kinetic-words" aria-hidden="true">
+          <span data-scrub data-distance="-360">CANSADA</span>
+          <span className="outline" data-scrub data-distance="420">SEM DIREÇÃO</span>
+          <span className="italic" data-scrub data-distance="-280">IRRITADA</span>
+        </div>
+      </section>
+
+      <section className="manifesto" aria-label="Manifesto terapêutico">
+        <div className="manifesto__pin">
+          <p className="overline">Não é sobre se encaixar de novo</p>
+          <div className="manifesto__type" aria-hidden="true">
+            <span data-scrub data-distance="-180">MUDAR</span>
+            <span className="manifesto__slash">/</span>
+            <span className="outline" data-scrub data-distance="220">INTEGRAR</span>
+          </div>
+          <p className="manifesto__copy" data-reveal>
+            É sobre compreender a experiência, integrar a própria história e
+            construir novas possibilidades de viver com mais equilíbrio,
+            autonomia e sentido.
+          </p>
+        </div>
+      </section>
+
+      <section className="process" id="processo" aria-labelledby="process-title">
+        <div className="process__intro">
+          <div className="rail-label light">
+            <span>02</span>
+            <span>Como acontece</span>
+          </div>
+          <div className="process__intro-content">
+            <p className="overline" data-reveal>O atendimento</p>
+            <h2 id="process-title" data-reveal>
+              Não existe protocolo
+              <em>para ser você.</em>
             </h2>
           </div>
-
-          <div className="intro-quote">
-            <span className="quote-mark" aria-hidden="true">“</span>
-            <p>
-              Muitas pessoas chegam dizendo: “Quero voltar a me sentir eu mesma.”
-              Ou: “Não sei por que estou tão cansada, irritada ou sem direção.”
-            </p>
-          </div>
         </div>
 
-        <div className="intro-cards">
-          <article>
-            <span>História</span>
-            <p>O que você viveu e o que trouxe você até aqui.</p>
-          </article>
-          <article className="image-card">
-            <img
-              src="/images/claudia-consultorio.png"
-              alt="Claudia Thirion em seu espaço de atendimento"
-              width="1024"
-              height="1536"
-              loading="lazy"
-            />
-          </article>
-          <article>
-            <span>Contexto</span>
-            <p>As relações, culturas e mudanças que atravessam seu momento.</p>
-          </article>
-          <article>
-            <span>Recursos</span>
-            <p>O que já existe em você e pode ser fortalecido no processo.</p>
-          </article>
-        </div>
-      </section>
-
-      <section className="care" id="atendimento" aria-labelledby="care-title">
-        <div className="care-heading">
-          <p className="eyebrow">Como acontece o meu atendimento?</p>
-          <h2 id="care-title">
-            Sua história não cabe em uma
-            <em> fórmula pronta.</em>
-          </h2>
-        </div>
-
-        <div className="care-body">
-          <p className="lead">
-            Cada pessoa chega com uma história única. Por isso, meu atendimento
-            começa com presença, curiosidade e uma compreensão cuidadosa de quem
-            você é.
-          </p>
-          <p>
-            Começamos com uma escuta atenta e uma avaliação da sua história de
-            vida e profissional, do contexto cultural, dos relacionamentos, dos
-            fatores de estresse e dos recursos emocionais disponíveis.
-          </p>
-          <p>
-            A partir dessa compreensão, elabora-se um plano terapêutico
-            individualizado, integrando a Psicologia Intercultural, EMDR e
-            Brainspotting, quando indicados.
-          </p>
-        </div>
-
-        <ol className="process-list" aria-label="Etapas do processo terapêutico">
-          {processSteps.map((step) => (
-            <li key={step.number}>
-              <span className="step-number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
+        <ol className="process__chapters">
+          {process.map((step) => (
+            <li className="process__chapter" key={step.index} data-reveal>
+              <div className="process__number">{step.index}</div>
+              <div className="process__verb">{step.verb}</div>
+              <div className="process__body">
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </div>
+              <span className="process__plus" aria-hidden="true">＋</span>
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="approaches" id="abordagens" aria-labelledby="approaches-title">
-        <div className="section-kicker light">
-          <span>Presença e técnica</span>
-          <span aria-hidden="true">✦</span>
-          <span>Cuidado individualizado</span>
+      <section className="methods" id="abordagens" aria-labelledby="methods-title">
+        <div className="methods__orbit" aria-hidden="true">
+          <div className="orbit orbit--outer"><span>ESCUTA · CONTEXTO · CORPO · CULTURA ·</span></div>
+          <div className="orbit orbit--inner"><span>PROCESSAR · INTEGRAR · PERTENCER ·</span></div>
+          <div className="orbit__core">VOCÊ</div>
         </div>
 
-        <div className="approaches-head">
-          <p className="eyebrow">Abordagens integradas</p>
-          <h2 id="approaches-title">
-            Recursos para processar,
-            <em> integrar e seguir.</em>
-          </h2>
+        <div className="methods__heading">
+          <div className="rail-label light">
+            <span>03</span>
+            <span>Abordagens</span>
+          </div>
+          <div>
+            <p className="overline" data-reveal>Uma integração precisa</p>
+            <h2 id="methods-title" data-reveal>
+              Método sem rigidez.<br />Profundidade sem pressa.
+            </h2>
+          </div>
         </div>
 
-        <div className="approach-grid">
-          {approaches.map((approach) => (
-            <article key={approach.number}>
-              <span>{approach.number}</span>
-              <h3>{approach.title}</h3>
-              <p>{approach.text}</p>
+        <div className="methods__list">
+          {methods.map((method) => (
+            <article className="method" key={method.index} data-reveal>
+              <span>{method.index}</span>
+              <h3>{method.title}</h3>
+              <p>{method.text}</p>
             </article>
           ))}
         </div>
-
-        <p className="approaches-summary">
-          O trabalho busca ampliar a capacidade de autorregulação, fortalecer
-          recursos internos, promover flexibilidade psicológica e facilitar a
-          adaptação às transições de vida e aos desafios da experiência intercultural.
-        </p>
       </section>
 
-      <section className="belonging" id="sobre" aria-labelledby="belonging-title">
-        <div className="belonging-image">
-          <span className="image-caption">Um espaço ético, seguro e acolhedor</span>
+      <section className="belonging" aria-labelledby="belonging-title">
+        <div className="belonging__media" data-reveal>
           <img
             src="/images/claudia-pausa.png"
-            alt="Claudia Thirion em um momento de pausa e reflexão"
+            alt="Claudia Thirion em seu espaço de atendimento"
             width="1024"
             height="1536"
             loading="lazy"
           />
+          <span>Claudia Thirion<br />Psicóloga intercultural</span>
         </div>
 
-        <div className="belonging-copy">
-          <p className="eyebrow">Para quem vive entre mudanças</p>
-          <h2 id="belonging-title">
-            Integrar a sua história.
-            <em> Reconstruir pertencimento.</em>
+        <div className="belonging__content">
+          <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
+          <h2 id="belonging-title" data-reveal>
+            Pertencer não é voltar.
+            <em>É poder chegar inteira.</em>
           </h2>
-          <p>
-            Ao longo do processo, investigamos as mudanças na identidade, o
-            pertencimento, os lutos migratórios e os vínculos afetivos e
-            profissionais em seus diferentes contextos culturais — aspectos que
-            podem exercer impacto profundo sobre a saúde mental.
-          </p>
-          <p>
-            Se você é imigrante, expatriada ou está vivendo uma grande transição
-            de vida, este é um espaço para compreender sua experiência, integrar
-            sua história e construir novas possibilidades de viver com mais
-            equilíbrio, autonomia e sentido.
-          </p>
-
-          <div className="audience-tags" aria-label="Públicos atendidos">
-            <span>Imigrantes</span>
-            <span>Expatriadas</span>
-            <span>Transições de vida</span>
+          <div className="belonging__columns" data-reveal>
+            <p>
+              Ao longo do processo, investigamos as mudanças na identidade, o
+              pertencimento, os lutos migratórios e os vínculos afetivos e
+              profissionais em seus diferentes contextos culturais.
+            </p>
+            <p>
+              Se você é imigrante, expatriada ou está vivendo uma grande
+              transição de vida, este é um espaço ético, seguro e acolhedor para
+              compreender a sua experiência sem reduzir quem você é a um sintoma.
+            </p>
           </div>
         </div>
+
+        <div className="belonging__ticker" aria-hidden="true">
+          <span data-scrub data-distance="-600">PERTENCIMENTO</span>
+        </div>
       </section>
 
-      <section className="finale" aria-labelledby="finale-title">
-        <p className="eyebrow">Além do alívio dos sintomas</p>
-        <h2 id="finale-title">
-          Viver a nova etapa com mais
-          <em> clareza e autenticidade.</em>
+      <section className="resolution" aria-labelledby="resolution-title">
+        <div className="resolution__corner">04 / O horizonte</div>
+        <p className="overline" data-reveal>Para além do alívio</p>
+        <h2 id="resolution-title" data-reveal>
+          Não apenas aliviar sintomas.
+          <span>Ampliar possibilidades.</span>
         </h2>
-        <p>
-          O objetivo final é favorecer uma adaptação mais saudável, ampliar a
-          capacidade de enfrentar desafios e permitir que você construa novas
-          possibilidades com mais equilíbrio e autonomia.
+        <p className="resolution__copy" data-reveal>
+          O objetivo final é favorecer uma adaptação mais saudável, reconstruir
+          o senso de pertencimento e permitir que você viva esta nova etapa com
+          mais equilíbrio, clareza e autenticidade.
         </p>
-        <a href="#inicio">
-          Recomeçar também é voltar para si <span aria-hidden="true">↑</span>
-        </a>
       </section>
 
-      <footer>
-        <a className="brand footer-brand" href="#inicio" aria-label="Claudia Thirion — voltar ao início">
-          <span>CT</span>
-          <span className="brand-name">Claudia Thirion</span>
-        </a>
-        <p>Psicologia intercultural para transições de vida.</p>
-        <p>© {new Date().getFullYear()} Claudia Thirion</p>
+      <section className="invitation" id="convite" aria-labelledby="invitation-title">
+        <div className="invitation__eyebrow">
+          <span>Seu próximo capítulo pode começar aqui</span>
+          <span>Claudia Thirion · Psicologia Intercultural</span>
+        </div>
+        <h2 id="invitation-title" data-reveal>
+          Vamos dar um novo
+          <span>sentido à mudança?</span>
+        </h2>
+        <div className="invitation__actions" data-reveal>
+          <a className="mega-cta magnetic" data-magnetic href="#processo">
+            <span>Conhecer o processo</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <p>Um primeiro passo para compreender seu momento, sua história e o caminho possível.</p>
+        </div>
+      </section>
+
+      <footer className="footer">
+        <div className="footer__top">
+          <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion — voltar ao início">
+            <span className="wordmark__mark">C<span>/</span>T</span>
+            <span className="wordmark__name">Claudia<br />Thirion</span>
+          </a>
+          <p>Psicologia para quem vive<br />entre mudanças e mundos.</p>
+          <a className="footer__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
+        </div>
+
+        <div className="footer__signature" aria-label="Claudia Thirion">
+          <span>CLAUDIA</span>
+          <span>THIRION</span>
+        </div>
+
+        <div className="footer__bottom">
+          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
+          <span>© {new Date().getFullYear()} Claudia Thirion</span>
+          <span>Feito para atravessar fronteiras.</span>
+        </div>
       </footer>
     </main>
   );

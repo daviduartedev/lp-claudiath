@@ -1,10 +1,23 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { Bodoni_Moda, Manrope } from "next/font/google";
 import "./globals.css";
 
-const title = "Claudia Thirion | Psicologia Intercultural";
+const display = Bodoni_Moda({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const sans = Manrope({
+  variable: "--font-sans",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const title = "Entre mundos, inteira. | Claudia Thirion";
 const description =
-  "Acompanhamento psicológico para pessoas que vivem grandes transições pessoais, profissionais e interculturais.";
+  "Psicologia intercultural para pessoas que vivem grandes transições pessoais, profissionais e culturais.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -32,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${origin}/og.png`,
           width: 1731,
           height: 909,
-          alt: "Claudia Thirion — Psicologia Intercultural",
+          alt: "Entre mundos, inteira — Claudia Thirion",
         },
       ],
     },
@@ -52,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body>{children}</body>
+      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
     </html>
   );
 }
