@@ -2,25 +2,21 @@ import ScrollExperience from "./scroll-experience";
 
 const process = [
   {
-    index: "01",
     verb: "Escutar",
     title: "Antes de qualquer método, existe uma história.",
     text: "Começamos com uma escuta atenta da sua história de vida e profissional: do que mudou, do que permaneceu e do que ainda não encontrou nome.",
   },
   {
-    index: "02",
     verb: "Mapear",
     title: "O contexto também fala.",
     text: "Observamos o contexto cultural, os relacionamentos, os fatores de estresse e os recursos emocionais disponíveis. Nada é analisado fora da vida real.",
   },
   {
-    index: "03",
     verb: "Processar",
     title: "Técnica a serviço da sua singularidade.",
     text: "A partir dessa compreensão, construímos um plano terapêutico individualizado, integrando Psicologia Intercultural, EMDR e Brainspotting quando indicados.",
   },
   {
-    index: "04",
     verb: "Integrar",
     title: "Não voltar a ser quem era. Voltar a ser sua.",
     text: "O processo fortalece recursos internos, autorregulação e flexibilidade psicológica para que a mudança deixe de ser apenas ruptura e possa ganhar sentido.",
@@ -29,17 +25,14 @@ const process = [
 
 const methods = [
   {
-    index: "01",
     title: "Psicologia Intercultural",
     text: "Para compreender o que acontece quando identidade, cultura e pertencimento deixam de ocupar o mesmo lugar.",
   },
   {
-    index: "02",
     title: "EMDR",
     text: "Para favorecer o processamento de experiências emocionalmente marcantes e ampliar a capacidade de autorregulação.",
   },
   {
-    index: "03",
     title: "Brainspotting",
     text: "Para acessar experiências profundas com presença, segurança e respeito ao ritmo do seu sistema emocional.",
   },
@@ -57,9 +50,9 @@ export default function Home() {
         </a>
 
         <nav className="header__nav" aria-label="Navegação principal">
-          <a href="#travessia"><span>01</span> A travessia</a>
-          <a href="#processo"><span>02</span> O processo</a>
-          <a href="#abordagens"><span>03</span> Abordagens</a>
+          <a href="#travessia">A travessia</a>
+          <a href="#processo">O processo</a>
+          <a href="#abordagens">Abordagens</a>
         </nav>
 
         <a className="header__cta magnetic" data-magnetic href="#convite">
@@ -67,8 +60,6 @@ export default function Home() {
           <span className="header__cta-arrow" aria-hidden="true">↗</span>
         </a>
       </header>
-
-      <div className="scroll-progress" aria-hidden="true"><span /></div>
 
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__media" aria-hidden="true">
@@ -124,10 +115,7 @@ export default function Home() {
       </div>
 
       <section className="travessia" id="travessia" aria-labelledby="travessia-title">
-        <div className="travessia__label rail-label">
-          <span>01</span>
-          <span>A travessia</span>
-        </div>
+        <div className="travessia__label rail-label">A travessia</div>
 
         <div className="travessia__statement">
           <p className="overline" data-reveal>O que escuto no consultório</p>
@@ -149,9 +137,9 @@ export default function Home() {
         </div>
 
         <div className="kinetic-words" aria-hidden="true">
-          <span data-scrub data-distance="-360">CANSADA</span>
-          <span className="outline" data-scrub data-distance="420">SEM DIREÇÃO</span>
-          <span className="italic" data-scrub data-distance="-280">IRRITADA</span>
+          <span>CANSADA</span>
+          <span className="outline">SEM DIREÇÃO</span>
+          <span className="italic">IRRITADA</span>
         </div>
       </section>
 
@@ -159,9 +147,9 @@ export default function Home() {
         <div className="manifesto__pin">
           <p className="overline">Não é sobre se encaixar de novo</p>
           <div className="manifesto__type" aria-hidden="true">
-            <span data-scrub data-distance="-180">MUDAR</span>
+            <span>MUDAR</span>
             <span className="manifesto__slash">/</span>
-            <span className="outline" data-scrub data-distance="220">INTEGRAR</span>
+            <span className="outline">INTEGRAR</span>
           </div>
           <p className="manifesto__copy" data-reveal>
             É sobre compreender a experiência, integrar a própria história e
@@ -173,10 +161,7 @@ export default function Home() {
 
       <section className="process" id="processo" aria-labelledby="process-title">
         <div className="process__intro">
-          <div className="rail-label light">
-            <span>02</span>
-            <span>Como acontece</span>
-          </div>
+          <div className="rail-label light">Como acontece</div>
           <div className="process__intro-content">
             <p className="overline" data-reveal>O atendimento</p>
             <h2 id="process-title" data-reveal>
@@ -188,8 +173,7 @@ export default function Home() {
 
         <ol className="process__chapters">
           {process.map((step) => (
-            <li className="process__chapter" key={step.index} data-reveal>
-              <div className="process__number">{step.index}</div>
+            <li className="process__chapter" key={step.verb} data-reveal>
               <div className="process__verb">{step.verb}</div>
               <div className="process__body">
                 <h3>{step.title}</h3>
@@ -202,17 +186,8 @@ export default function Home() {
       </section>
 
       <section className="methods" id="abordagens" aria-labelledby="methods-title">
-        <div className="methods__orbit" aria-hidden="true">
-          <div className="orbit orbit--outer"><span>ESCUTA · CONTEXTO · CORPO · CULTURA ·</span></div>
-          <div className="orbit orbit--inner"><span>PROCESSAR · INTEGRAR · PERTENCER ·</span></div>
-          <div className="orbit__core">VOCÊ</div>
-        </div>
-
         <div className="methods__heading">
-          <div className="rail-label light">
-            <span>03</span>
-            <span>Abordagens</span>
-          </div>
+          <div className="rail-label light">Abordagens</div>
           <div>
             <p className="overline" data-reveal>Uma integração precisa</p>
             <h2 id="methods-title" data-reveal>
@@ -223,8 +198,8 @@ export default function Home() {
 
         <div className="methods__list">
           {methods.map((method) => (
-            <article className="method" key={method.index} data-reveal>
-              <span>{method.index}</span>
+            <article className="method" key={method.title} data-reveal>
+              <span className="method__eyebrow">Abordagem integrada</span>
               <h3>{method.title}</h3>
               <p>{method.text}</p>
             </article>
@@ -233,17 +208,6 @@ export default function Home() {
       </section>
 
       <section className="belonging" aria-labelledby="belonging-title">
-        <div className="belonging__media" data-reveal>
-          <img
-            src="/images/claudia-pausa.png"
-            alt="Claudia Thirion em seu espaço de atendimento"
-            width="1024"
-            height="1536"
-            loading="lazy"
-          />
-          <span>Claudia Thirion<br />Psicóloga intercultural</span>
-        </div>
-
         <div className="belonging__content">
           <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
           <h2 id="belonging-title" data-reveal>
@@ -262,15 +226,29 @@ export default function Home() {
               compreender a sua experiência sem reduzir quem você é a um sintoma.
             </p>
           </div>
+          <div className="belonging__actions" data-reveal>
+            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento <span aria-hidden="true">↗</span></a>
+            <a className="belonging__cta" href="#convite">Começar por aqui</a>
+          </div>
+        </div>
+
+        <div className="belonging__media" data-reveal>
+          <img
+            src="/images/claudia-pausa.png"
+            alt="Claudia Thirion em seu espaço de atendimento"
+            width="1024"
+            height="1536"
+            loading="lazy"
+          />
+          <span>Claudia Thirion<br />Psicóloga intercultural</span>
         </div>
 
         <div className="belonging__ticker" aria-hidden="true">
-          <span data-scrub data-distance="-600">PERTENCIMENTO</span>
+          <span>PERTENCIMENTO</span>
         </div>
       </section>
 
       <section className="resolution" aria-labelledby="resolution-title">
-        <div className="resolution__corner">04 / O horizonte</div>
         <p className="overline" data-reveal>Para além do alívio</p>
         <h2 id="resolution-title" data-reveal>
           Não apenas aliviar sintomas.
