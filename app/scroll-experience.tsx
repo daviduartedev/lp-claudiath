@@ -56,7 +56,5 @@ export default function ScrollExperience() {
     };
   }, []);
 
-  return (
-    <div className="page-noise" aria-hidden="true" />
-  );
+  return null;
 }

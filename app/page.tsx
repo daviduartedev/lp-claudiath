@@ -71,8 +71,6 @@ export default function Home() {
             fetchPriority="high"
           />
         </div>
-        <div className="hero__veil" aria-hidden="true" />
-
         <div className="hero__content">
           <p className="hero__credential" data-reveal>Claudia Thirion · Psicologia Intercultural</p>
           <h1 id="hero-title">
@@ -93,10 +91,12 @@ export default function Home() {
 
       <div className="signal" aria-hidden="true">
         <div className="signal__track">
-          <span>MIGRAÇÃO</span><i>✳</i><span>IDENTIDADE</span><i>✳</i>
-          <span>PERTENCIMENTO</span><i>✳</i><span>TRANSIÇÃO</span><i>✳</i>
-          <span>MIGRAÇÃO</span><i>✳</i><span>IDENTIDADE</span><i>✳</i>
-          <span>PERTENCIMENTO</span><i>✳</i><span>TRANSIÇÃO</span><i>✳</i>
+          {[0, 1].map((copy) => (
+            <div className="signal__group" key={copy}>
+              <span>TRANSIÇÃO</span><i>✳</i><span>MIGRAÇÃO</span><i>✳</i>
+              <span>IDENTIDADE</span><i>✳</i><span>PERTENCIMENTO</span><i>✳</i>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -106,38 +106,49 @@ export default function Home() {
           <p className="overline" data-reveal>O que escuto no consultório</p>
         </div>
 
-        <div className="travessia__statement" data-reveal>
-          <h2 id="travessia-title">
-            <span>“Quero voltar a me sentir</span>
-            <strong>eu mesma.”</strong>
-          </h2>
-          <p className="travessia__echo">
-            “Não sei por que estou tão cansada, irritada ou sem direção.”
-          </p>
-        </div>
+        <div className="travessia__grid">
+          <blockquote className="travessia__quote" data-reveal>
+            <h2 id="travessia-title">Quero voltar a me sentir <strong>eu mesma.</strong></h2>
+          </blockquote>
 
-        <div className="travessia__aside" data-reveal>
-          <span>Um começo singular</span>
-          <p>
-            Cada pessoa chega com uma história única. Por isso, meu atendimento
-            não segue fórmulas prontas. Ele começa onde você está.
-          </p>
+          <div className="travessia__context" data-reveal>
+            <p className="travessia__echo">
+              “Não sei por que estou tão cansada, irritada ou sem direção.”
+            </p>
+            <p className="travessia__explanation">
+              Cada pessoa chega com uma história única. Por isso, meu atendimento
+              não segue fórmulas prontas. Ele começa onde você está.
+            </p>
+            <a className="travessia__link" href="#processo">
+              Entender o processo <span aria-hidden="true">↘</span>
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="manifesto" aria-label="Manifesto terapêutico">
-        <div className="manifesto__pin">
+      <section className="manifesto" aria-labelledby="manifesto-title">
+        <div className="manifesto__header">
           <p className="overline">Não é sobre se encaixar de novo</p>
-          <div className="manifesto__type" aria-hidden="true">
-            <span>MUDAR</span>
-            <span className="manifesto__slash">/</span>
-            <span className="outline">INTEGRAR</span>
+          <span>Psicologia para movimentos reais</span>
+        </div>
+        <div className="manifesto__body">
+          <h2 id="manifesto-title" data-reveal>
+            Mudar não apaga
+            <span>quem você é.</span>
+          </h2>
+          <div className="manifesto__side" data-reveal>
+            <p>
+              É sobre compreender a experiência, integrar a própria história e
+              construir novas possibilidades de viver com mais equilíbrio,
+              autonomia e sentido.
+            </p>
+            <a href="#processo">Conhecer o atendimento <span aria-hidden="true">↘</span></a>
           </div>
-          <p className="manifesto__copy" data-reveal>
-            É sobre compreender a experiência, integrar a própria história e
-            construir novas possibilidades de viver com mais equilíbrio,
-            autonomia e sentido.
-          </p>
+        </div>
+        <div className="manifesto__principles" aria-label="Pilares do processo">
+          <span>Compreender</span>
+          <span>Integrar</span>
+          <span>Reconstruir</span>
         </div>
       </section>
 
