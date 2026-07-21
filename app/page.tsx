@@ -64,10 +64,10 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__media" aria-hidden="true">
           <img
-            src="/images/claudia-hero-profile.png"
+            src="/images/claudia-hero-wide.jpg"
             alt=""
-            width="1672"
-            height="941"
+            width="2560"
+            height="1440"
             fetchPriority="high"
           />
         </div>
