@@ -6,7 +6,6 @@ export default function ScrollExperience() {
   useEffect(() => {
     const root = document.documentElement;
     const header = document.getElementById("site-header");
-    const cursor = document.querySelector<HTMLElement>(".cursor-orb");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const scrubItems = Array.from(document.querySelectorAll<HTMLElement>("[data-scrub]"));
@@ -34,10 +33,6 @@ export default function ScrollExperience() {
 
     let frame = 0;
     let lastScroll = window.scrollY;
-    let mouseX = window.innerWidth / 2;
-    let mouseY = window.innerHeight / 2;
-    let cursorX = mouseX;
-    let cursorY = mouseY;
 
     const render = () => {
       frame = 0;
@@ -71,21 +66,6 @@ export default function ScrollExperience() {
       if (!frame) frame = window.requestAnimationFrame(render);
     };
 
-    const pointerMove = (event: PointerEvent) => {
-      mouseX = event.clientX;
-      mouseY = event.clientY;
-      root.style.setProperty("--pointer-x", `${mouseX}px`);
-      root.style.setProperty("--pointer-y", `${mouseY}px`);
-    };
-
-    let cursorFrame = 0;
-    const renderCursor = () => {
-      cursorX += (mouseX - cursorX) * 0.13;
-      cursorY += (mouseY - cursorY) * 0.13;
-      if (cursor) cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
-      cursorFrame = window.requestAnimationFrame(renderCursor);
-    };
-
     const magneticItems = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
     const magneticCleanups = magneticItems.map((item) => {
       const move = (event: PointerEvent) => {
@@ -109,26 +89,19 @@ export default function ScrollExperience() {
 
     window.addEventListener("scroll", requestRender, { passive: true });
     window.addEventListener("resize", requestRender);
-    window.addEventListener("pointermove", pointerMove, { passive: true });
     render();
-    cursorFrame = window.requestAnimationFrame(renderCursor);
 
     return () => {
       observer.disconnect();
       magneticCleanups.forEach((cleanup) => cleanup());
       window.removeEventListener("scroll", requestRender);
       window.removeEventListener("resize", requestRender);
-      window.removeEventListener("pointermove", pointerMove);
       window.cancelAnimationFrame(frame);
-      window.cancelAnimationFrame(cursorFrame);
       root.classList.remove("has-js");
     };
   }, []);
 
   return (
-    <>
-      <div className="cursor-orb" aria-hidden="true" />
-      <div className="page-noise" aria-hidden="true" />
-    </>
+    <div className="page-noise" aria-hidden="true" />
   );
 }

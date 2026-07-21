@@ -45,7 +45,7 @@ export async function generateMetadata(): Promise<Metadata> {
           url: `${origin}/og.png`,
           width: 1731,
           height: 909,
-          alt: "Entre mundos, inteira — Claudia Thirion",
+          alt: "Entre mundos, inteira, Claudia Thirion",
         },
       ],
     },

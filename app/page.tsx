@@ -5,7 +5,7 @@ const process = [
     index: "01",
     verb: "Escutar",
     title: "Antes de qualquer método, existe uma história.",
-    text: "Começamos com uma escuta atenta da sua história de vida e profissional — do que mudou, do que permaneceu e do que ainda não encontrou nome.",
+    text: "Começamos com uma escuta atenta da sua história de vida e profissional: do que mudou, do que permaneceu e do que ainda não encontrou nome.",
   },
   {
     index: "02",
@@ -51,7 +51,7 @@ export default function Home() {
       <ScrollExperience />
 
       <header className="header" id="site-header">
-        <a className="wordmark" href="#inicio" aria-label="Claudia Thirion — início">
+        <a className="wordmark" href="#inicio" aria-label="Claudia Thirion, início">
           <span className="wordmark__mark">C<span>/</span>T</span>
           <span className="wordmark__name">Claudia<br />Thirion</span>
         </a>
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         <div className="hero__title-wrap">
-          <p className="hero__pretitle" data-reveal>Para quem mudou por fora — e ainda está se encontrando por dentro.</p>
+          <p className="hero__pretitle" data-reveal>Para quem mudou por fora e ainda está se encontrando por dentro.</p>
           <h1 id="hero-title">
             <span className="hero__line hero__line--solid" data-hero-line>Entre</span>
             <span className="hero__line hero__line--outline" data-hero-line>mundos,</span>
@@ -98,8 +98,8 @@ export default function Home() {
 
         <div className="hero__bottom">
           <p data-reveal>
-            Acompanho pessoas que vivem grandes transições — pessoais,
-            profissionais e interculturais — a transformar mudanças em caminhos
+            Acompanho pessoas que vivem grandes transições pessoais,
+            profissionais e interculturais, transformando mudanças em caminhos
             de crescimento, pertencimento e sentido.
           </p>
           <a className="circle-cta magnetic" data-magnetic href="#processo">
@@ -144,7 +144,7 @@ export default function Home() {
           <span className="asterisk" aria-hidden="true">✳</span>
           <p>
             Cada pessoa chega com uma história única. Por isso, meu atendimento
-            não segue fórmulas prontas — ele começa onde você está.
+            não segue fórmulas prontas. Ele começa onde você está.
           </p>
         </div>
 
@@ -303,7 +303,7 @@ export default function Home() {
 
       <footer className="footer">
         <div className="footer__top">
-          <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion — voltar ao início">
+          <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
             <span className="wordmark__mark">C<span>/</span>T</span>
             <span className="wordmark__name">Claudia<br />Thirion</span>
           </a>

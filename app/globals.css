@@ -16,8 +16,6 @@
   --hero-y: 0px;
   --hero-copy-y: 0px;
   --orbit-rotation: 0deg;
-  --pointer-x: 50vw;
-  --pointer-y: 50vh;
 }
 
 * {
@@ -77,31 +75,6 @@ p {
     repeating-radial-gradient(circle at 20% 30%, transparent 0, #000 0.6px, transparent 1.2px, transparent 4px),
     repeating-radial-gradient(circle at 80% 70%, transparent 0, #fff 0.5px, transparent 1px, transparent 5px);
   mix-blend-mode: multiply;
-}
-
-.cursor-orb {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 34px;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  pointer-events: none;
-  opacity: 0;
-  background: var(--pink-hot);
-  mix-blend-mode: difference;
-  transition: width 250ms ease, opacity 250ms ease;
-}
-
-@media (pointer: fine) {
-  .has-js .cursor-orb {
-    opacity: 0.75;
-  }
-
-  a:hover ~ .cursor-orb {
-    width: 54px;
-  }
 }
 
 .header {
@@ -553,7 +526,7 @@ p {
   min-height: 190vh;
   padding: clamp(110px, 12vw, 190px) clamp(24px, 5vw, 92px) 0;
   background:
-    radial-gradient(circle at var(--pointer-x) var(--pointer-y), rgba(239, 113, 135, 0.12), transparent 18%),
+    radial-gradient(circle at 72% 34%, rgba(239, 113, 135, 0.12), transparent 18%),
     var(--bone);
 }
 
@@ -1360,7 +1333,6 @@ p {
 @media (max-width: 760px) {
   body { font-size: 15px; }
   .page-noise { opacity: 0.025; }
-  .cursor-orb { display: none; }
 
   .header {
     min-height: 72px;
