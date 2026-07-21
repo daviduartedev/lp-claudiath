@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Bodoni_Moda, Manrope } from "next/font/google";
+import { DM_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 
-const display = Bodoni_Moda({
+const display = Manrope({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
 });
 
-const sans = Manrope({
+const sans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const title = "Entre mundos, inteira. | Claudia Thirion";
+const title = "Mudar pode ser um novo começo | Claudia Thirion";
 const description =
   "Psicologia intercultural para pessoas que vivem grandes transições pessoais, profissionais e culturais.";
 
@@ -42,10 +42,10 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       images: [
         {
-          url: `${origin}/og.png`,
-          width: 1731,
-          height: 909,
-          alt: "Entre mundos, inteira, Claudia Thirion",
+          url: `${origin}/og-v2.png`,
+          width: 1729,
+          height: 910,
+          alt: "Mudar pode ser um novo começo, Claudia Thirion",
         },
       ],
     },
@@ -53,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
       card: "summary_large_image",
       title,
       description,
-      images: [`${origin}/og.png`],
+      images: [`${origin}/og-v2.png`],
     },
   };
 }

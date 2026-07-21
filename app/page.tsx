@@ -56,7 +56,7 @@ export default function Home() {
         </nav>
 
         <a className="header__cta magnetic" data-magnetic href="#convite">
-          <span>Quero conversar</span>
+          <span>Agendar conversa</span>
           <span className="header__cta-arrow" aria-hidden="true">↗</span>
         </a>
       </header>
@@ -64,44 +64,30 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__media" aria-hidden="true">
           <img
-            src="/images/claudia-hero-wide.jpg"
+            src="/images/claudia-hero-profile.png"
             alt=""
-            width="2560"
-            height="1440"
+            width="1672"
+            height="941"
             fetchPriority="high"
           />
         </div>
         <div className="hero__veil" aria-hidden="true" />
 
-        <div className="hero__micro hero__micro--top">
-          <span>Psicologia intercultural</span>
-          <span>Grandes transições de vida</span>
-        </div>
-
-        <div className="hero__title-wrap">
-          <p className="hero__pretitle" data-reveal>Para quem mudou por fora e ainda está se encontrando por dentro.</p>
+        <div className="hero__content">
+          <p className="hero__credential" data-reveal>Claudia Thirion · Psicologia Intercultural</p>
           <h1 id="hero-title">
-            <span className="hero__line hero__line--solid" data-hero-line>Entre</span>
-            <span className="hero__line hero__line--outline" data-hero-line>mundos,</span>
-            <span className="hero__line hero__line--italic" data-hero-line>inteira.</span>
+            <span className="hero__line" data-hero-line>Mudar pode</span>
+            <span className="hero__line" data-hero-line>ser um novo</span>
+            <span className="hero__line hero__line--accent" data-hero-line>começo.</span>
           </h1>
-        </div>
-
-        <div className="hero__bottom">
-          <p data-reveal>
-            Acompanho pessoas que vivem grandes transições pessoais,
-            profissionais e interculturais, transformando mudanças em caminhos
-            de crescimento, pertencimento e sentido.
+          <p className="hero__copy" data-reveal>
+            Psicologia para atravessar grandes transições de vida com mais
+            clareza, pertencimento e sentido.
           </p>
-          <a className="circle-cta magnetic" data-magnetic href="#processo">
-            <span>Conhecer o<br />atendimento</span>
-            <span aria-hidden="true">↓</span>
+          <a className="hero__cta magnetic" data-magnetic href="#processo">
+            <span>Conhecer o atendimento</span>
+            <span className="hero__cta-icon" aria-hidden="true">↘</span>
           </a>
-        </div>
-
-        <div className="hero__index" aria-hidden="true">
-          <span>CT®</span>
-          <span>2026</span>
         </div>
       </section>
 
@@ -115,31 +101,27 @@ export default function Home() {
       </div>
 
       <section className="travessia" id="travessia" aria-labelledby="travessia-title">
-        <div className="travessia__label rail-label">A travessia</div>
-
-        <div className="travessia__statement">
+        <div className="travessia__heading">
+          <div className="travessia__label rail-label">A travessia</div>
           <p className="overline" data-reveal>O que escuto no consultório</p>
-          <h2 id="travessia-title" data-reveal>
-            “Quero voltar a me sentir
-            <span className="word-shift">eu mesma.</span>”
+        </div>
+
+        <div className="travessia__statement" data-reveal>
+          <h2 id="travessia-title">
+            <span>“Quero voltar a me sentir</span>
+            <strong>eu mesma.”</strong>
           </h2>
-          <p className="travessia__echo" data-reveal>
+          <p className="travessia__echo">
             “Não sei por que estou tão cansada, irritada ou sem direção.”
           </p>
         </div>
 
         <div className="travessia__aside" data-reveal>
-          <span className="asterisk" aria-hidden="true">✳</span>
+          <span>Um começo singular</span>
           <p>
             Cada pessoa chega com uma história única. Por isso, meu atendimento
             não segue fórmulas prontas. Ele começa onde você está.
           </p>
-        </div>
-
-        <div className="kinetic-words" aria-hidden="true">
-          <span>CANSADA</span>
-          <span className="outline">SEM DIREÇÃO</span>
-          <span className="italic">IRRITADA</span>
         </div>
       </section>
 
