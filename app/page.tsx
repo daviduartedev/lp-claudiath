@@ -45,7 +45,7 @@ export default function Home() {
 
       <header className="header" id="site-header">
         <a className="wordmark" href="#inicio" aria-label="Claudia Thirion, início">
-          <span className="wordmark__mark">C<span>/</span>T</span>
+          <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
           <span className="wordmark__name">Claudia<br />Thirion</span>
         </a>
 
@@ -72,7 +72,6 @@ export default function Home() {
           />
         </div>
         <div className="hero__content">
-          <p className="hero__credential" data-reveal>Claudia Thirion · Psicologia Intercultural</p>
           <h1 id="hero-title">
             <span className="hero__line" data-hero-line>Mudar pode</span>
             <span className="hero__line" data-hero-line>ser um novo</span>
@@ -101,54 +100,47 @@ export default function Home() {
       </div>
 
       <section className="travessia" id="travessia" aria-labelledby="travessia-title">
-        <div className="travessia__heading">
-          <div className="travessia__label rail-label">A travessia</div>
-          <p className="overline" data-reveal>O que escuto no consultório</p>
+        <div className="travessia__intro" data-reveal>
+          <div className="rail-label">A travessia</div>
+          <p>O que escuto no consultório</p>
         </div>
 
-        <div className="travessia__grid">
-          <blockquote className="travessia__quote" data-reveal>
-            <h2 id="travessia-title">Quero voltar a me sentir <strong>eu mesma.</strong></h2>
-          </blockquote>
-
-          <div className="travessia__context" data-reveal>
-            <p className="travessia__echo">
-              “Não sei por que estou tão cansada, irritada ou sem direção.”
-            </p>
-            <p className="travessia__explanation">
+        <div className="travessia__stage">
+          <p className="travessia__kicker" data-reveal>Quando a vida muda por fora</p>
+          <h2 id="travessia-title" data-reveal>
+            “Quero voltar a me sentir <em>eu mesma.</em>”
+          </h2>
+          <div className="travessia__notes">
+            <p data-reveal>“Não sei por que estou tão cansada, irritada ou sem direção.”</p>
+            <p data-reveal>
               Cada pessoa chega com uma história única. Por isso, meu atendimento
-              não segue fórmulas prontas. Ele começa onde você está.
+              começa pela escuta, sem fórmulas prontas.
             </p>
-            <a className="travessia__link" href="#processo">
-              Entender o processo <span aria-hidden="true">↘</span>
-            </a>
           </div>
+          <a className="travessia__link" href="#processo" data-reveal>
+            Conhecer o atendimento <span aria-hidden="true">↘</span>
+          </a>
         </div>
       </section>
 
       <section className="manifesto" aria-labelledby="manifesto-title">
-        <div className="manifesto__header">
-          <p className="overline">Não é sobre se encaixar de novo</p>
-          <span>Psicologia para movimentos reais</span>
-        </div>
-        <div className="manifesto__body">
+        <div className="manifesto__shell">
+          <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
           <h2 id="manifesto-title" data-reveal>
-            Mudar não apaga
-            <span>quem você é.</span>
+            É sobre integrar
+            <span>o que mudou</span>
+            sem perder quem você é.
           </h2>
-          <div className="manifesto__side" data-reveal>
-            <p>
-              É sobre compreender a experiência, integrar a própria história e
-              construir novas possibilidades de viver com mais equilíbrio,
-              autonomia e sentido.
-            </p>
+          <p className="manifesto__copy" data-reveal>
+            Compreender a experiência, integrar a própria história e construir
+            novas possibilidades de viver com mais equilíbrio, autonomia e sentido.
+          </p>
+          <div className="manifesto__actions" data-reveal>
             <a href="#processo">Conhecer o atendimento <span aria-hidden="true">↘</span></a>
+            <div aria-label="Pilares do processo">
+              <span>Compreender</span><span>Integrar</span><span>Reconstruir</span>
+            </div>
           </div>
-        </div>
-        <div className="manifesto__principles" aria-label="Pilares do processo">
-          <span>Compreender</span>
-          <span>Integrar</span>
-          <span>Reconstruir</span>
         </div>
       </section>
 
@@ -275,7 +267,7 @@ export default function Home() {
       <footer className="footer">
         <div className="footer__top">
           <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
-            <span className="wordmark__mark">C<span>/</span>T</span>
+            <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
             <span className="wordmark__name">Claudia<br />Thirion</span>
           </a>
           <p>Psicologia para quem vive<br />entre mudanças e mundos.</p>
