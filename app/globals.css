@@ -44,6 +44,45 @@ main {
   overflow: clip;
 }
 
+.scroll-asterisks {
+  position: fixed;
+  inset: 0;
+  z-index: 12;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.scroll-asterisk {
+  --asterisk-x: 0px;
+  --asterisk-y: 0px;
+  --asterisk-rotation: 0deg;
+  --asterisk-scale: 0.9;
+  --asterisk-opacity: 0.22;
+  position: absolute;
+  display: block;
+  color: rgba(217, 154, 166, 0.92);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(0.85rem, 1.6vw, 1.8rem);
+  font-style: normal;
+  line-height: 1;
+  opacity: var(--asterisk-opacity);
+  text-shadow: 0 0 22px rgba(217, 154, 166, 0.34);
+  transform: translate3d(var(--asterisk-x), var(--asterisk-y), 0)
+    rotate(var(--asterisk-rotation)) scale(var(--asterisk-scale));
+  transform-origin: center;
+  will-change: transform, opacity;
+}
+
+.scroll-asterisk:nth-child(1) { top: 18%; left: 2.8%; font-size: clamp(1rem, 1.8vw, 2rem); }
+.scroll-asterisk:nth-child(2) { top: 35%; right: 4.5%; font-size: clamp(1.4rem, 2.4vw, 2.8rem); }
+.scroll-asterisk:nth-child(3) { top: 73%; left: 7%; color: rgba(81, 74, 70, 0.76); }
+.scroll-asterisk:nth-child(4) { top: 84%; right: 20%; font-size: clamp(1rem, 1.9vw, 2.2rem); }
+.scroll-asterisk:nth-child(5) { top: 11%; left: 52%; color: rgba(245, 236, 217, 0.82); }
+.scroll-asterisk:nth-child(6) { top: 56%; right: 45%; color: rgba(81, 74, 70, 0.72); }
+.scroll-asterisk:nth-child(7) { top: 46%; left: 17%; font-size: clamp(0.9rem, 1.5vw, 1.7rem); }
+.scroll-asterisk:nth-child(8) { top: 68%; right: 7%; color: rgba(245, 236, 217, 0.84); }
+
 a {
   color: inherit;
   text-decoration: none;
@@ -1366,6 +1405,10 @@ p {
 
 @media (max-width: 760px) {
   body { font-size: 16px; }
+  .scroll-asterisk:nth-child(2),
+  .scroll-asterisk:nth-child(5),
+  .scroll-asterisk:nth-child(6) { display: none; }
+  .scroll-asterisk { font-size: 0.9rem; }
   .header {
     top: 12px;
     right: 12px;
@@ -1511,6 +1554,11 @@ p {
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .scroll-asterisk {
+    opacity: 0.18 !important;
+    transform: none !important;
+    will-change: auto;
+  }
   *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;

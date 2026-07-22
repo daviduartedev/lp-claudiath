@@ -38,10 +38,40 @@ const methods = [
   },
 ];
 
+const scrollAsterisks = [
+  { speed: "0.82", phase: "0.4" },
+  { speed: "1.15", phase: "1.7" },
+  { speed: "0.66", phase: "2.8" },
+  { speed: "1.32", phase: "4.1" },
+  { speed: "0.94", phase: "5.2" },
+  { speed: "1.48", phase: "0.9" },
+  { speed: "0.74", phase: "3.5" },
+  { speed: "1.08", phase: "5.8" },
+];
+
+function ScrollAsterisks() {
+  return (
+    <div className="scroll-asterisks" aria-hidden="true">
+      {scrollAsterisks.map((asterisk, index) => (
+        <span
+          className="scroll-asterisk"
+          data-scroll-asterisk
+          data-speed={asterisk.speed}
+          data-phase={asterisk.phase}
+          key={`${asterisk.speed}-${asterisk.phase}-${index}`}
+        >
+          ✳
+        </span>
+      ))}
+    </div>
+  );
+}
+
 export default function Home() {
   return (
     <main id="inicio">
       <ScrollExperience />
+      <ScrollAsterisks />
 
       <header className="header" id="site-header">
         <a className="wordmark" href="#inicio" aria-label="Claudia Thirion, início">

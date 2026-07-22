@@ -7,6 +7,7 @@ export default function ScrollExperience() {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const asterisks = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-asterisk]"));
 
     root.classList.add("has-js");
 
@@ -27,6 +28,34 @@ export default function ScrollExperience() {
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
     revealItems.forEach((item) => observer.observe(item));
+
+    let asteriskFrame = 0;
+    const updateAsterisks = () => {
+      asteriskFrame = 0;
+      const scrollUnit = window.scrollY / Math.max(window.innerHeight, 1);
+
+      asterisks.forEach((asterisk) => {
+        const speed = Number(asterisk.dataset.speed ?? 1);
+        const phase = Number(asterisk.dataset.phase ?? 0);
+        const pulse = (Math.sin(scrollUnit * 2.2 * speed + phase) + 1) / 2;
+        const x = Math.sin(scrollUnit * 1.6 * speed + phase) * 32;
+        const y = Math.cos(scrollUnit * 1.25 * speed + phase) * 72;
+        const rotation = scrollUnit * 75 * speed + phase * 50;
+
+        asterisk.style.setProperty("--asterisk-x", `${x.toFixed(2)}px`);
+        asterisk.style.setProperty("--asterisk-y", `${y.toFixed(2)}px`);
+        asterisk.style.setProperty("--asterisk-rotation", `${rotation.toFixed(2)}deg`);
+        asterisk.style.setProperty("--asterisk-scale", (0.72 + pulse * 0.48).toFixed(3));
+        asterisk.style.setProperty("--asterisk-opacity", (0.14 + pulse * 0.3).toFixed(3));
+      });
+    };
+    const queueAsteriskUpdate = () => {
+      if (!asteriskFrame) asteriskFrame = window.requestAnimationFrame(updateAsterisks);
+    };
+
+    updateAsterisks();
+    window.addEventListener("scroll", queueAsteriskUpdate, { passive: true });
+    window.addEventListener("resize", queueAsteriskUpdate);
 
     const magneticItems = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
     const magneticCleanups = magneticItems.map((item) => {
@@ -51,6 +80,9 @@ export default function ScrollExperience() {
 
     return () => {
       observer.disconnect();
+      if (asteriskFrame) window.cancelAnimationFrame(asteriskFrame);
+      window.removeEventListener("scroll", queueAsteriskUpdate);
+      window.removeEventListener("resize", queueAsteriskUpdate);
       magneticCleanups.forEach((cleanup) => cleanup());
       root.classList.remove("has-js");
     };
