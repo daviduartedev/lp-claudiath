@@ -1258,13 +1258,50 @@ p {
 @media (max-width: 1050px) {
   .header__nav { display: none; }
   .header { grid-template-columns: 1fr auto; }
+  .header .wordmark { min-height: 44px; }
 
   .hero__content { width: min(52vw, 560px); }
+  .hero__media img { object-position: 70% center; }
   .hero h1 { font-size: clamp(3.7rem, 8vw, 6.4rem); }
   .process__chapter { grid-template-columns: 0.35fr 1fr 30px; }
   .process__body { grid-template-columns: 1fr; gap: 18px; }
 
   .methods__list { gap: 18px; }
+
+  .footer__nav > a:not(.footer__contact),
+  .footer__up {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+  }
+}
+
+@media (min-width: 761px) and (max-width: 900px) {
+  .methods__list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .method { min-height: 380px; }
+  .method:last-child {
+    grid-column: 1 / -1;
+    min-height: 340px;
+  }
+  .method:last-child p { max-width: 560px; }
+
+  .belonging {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    padding-bottom: 190px;
+  }
+  .belonging__content {
+    max-width: none;
+  }
+  .belonging__content h2 {
+    max-width: 760px;
+    font-size: clamp(4.25rem, 9vw, 5.25rem);
+  }
+  .belonging__media {
+    justify-self: center;
+    width: min(68vw, 520px);
+    margin-top: 18px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -1283,7 +1320,20 @@ p {
   .header__cta span:first-child::after { content: "Conversar"; font-size: 0.55rem; }
 
   .hero { min-height: 820px; }
-  .hero__media img { object-position: 66% center; }
+  .hero::after {
+    position: absolute;
+    inset: 36% 0 0;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(251, 248, 242, 0) 0%,
+      rgba(251, 248, 242, 0.72) 46%,
+      rgba(251, 248, 242, 0.97) 100%
+    );
+    content: "";
+  }
+  .hero__media img { object-position: 78% center; }
   .hero__content {
     top: 118px;
     right: 20px;
@@ -1292,8 +1342,13 @@ p {
     width: auto;
     justify-content: flex-end;
   }
-  .hero h1 { font-size: clamp(3.4rem, 15.2vw, 5.25rem); line-height: 1.02; }
-  .hero__copy { max-width: 330px; margin-top: 26px; font-size: 0.95rem; }
+  .hero h1 { font-size: clamp(3.15rem, 14vw, 4.9rem); line-height: 1.02; }
+  .hero__copy {
+    max-width: 330px;
+    margin-top: 24px;
+    color: rgba(81, 74, 70, 0.94);
+    font-size: 0.95rem;
+  }
   .hero__cta { min-height: 54px; margin-top: 26px; padding: 0 22px; }
 
   .signal__track { padding: 12px 0; }
