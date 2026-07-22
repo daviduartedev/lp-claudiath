@@ -308,6 +308,17 @@ export default function Home() {
           <span>Psicologia Intercultural · EMDR · Brainspotting</span>
           <a className="footer__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
         </div>
+
+        <a
+          className="footer__credit"
+          href="https://utopia.app.br/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Site desenvolvido por</span>
+          <strong>Utopia</strong>
+          <span className="footer__credit-arrow" aria-hidden="true">↗</span>
+        </a>
       </footer>
     </main>
   );
