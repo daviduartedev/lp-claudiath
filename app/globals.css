@@ -351,10 +351,11 @@ p {
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.17em;
+  text-decoration: none !important;
   text-transform: uppercase;
 }
 
-.overline::before {
+.overline::after {
   color: var(--pink-hot);
   content: "✳";
   font-family: var(--font-display), Georgia, serif;
