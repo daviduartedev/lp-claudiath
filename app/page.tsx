@@ -56,7 +56,6 @@ export default function Home() {
 
         <a className="header__cta magnetic" data-magnetic href="#convite">
           <span>Agendar conversa</span>
-          <span className="header__cta-arrow" aria-hidden="true">↗</span>
         </a>
       </header>
 
@@ -82,17 +81,16 @@ export default function Home() {
           </p>
           <a className="hero__cta magnetic" data-magnetic href="#processo">
             <span>Conhecer o atendimento</span>
-            <span className="hero__cta-icon" aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
 
       <div className="signal" aria-hidden="true">
         <div className="signal__track">
-          {[0, 1].map((copy) => (
+          {[0, 1, 2, 3, 4, 5, 6, 7].map((copy) => (
             <div className="signal__group" key={copy}>
-              <i>✳</i><span>IDENTIDADE</span><i>✳</i><span>PERTENCIMENTO</span>
-              <i>✳</i><span>TRANSIÇÃO</span><i>✳</i><span>MIGRAÇÃO</span>
+              <span>PERTENCIMENTO</span><i>✳</i><span>TRANSIÇÃO</span><i>✳</i>
+              <span>MIGRAÇÃO</span><i>✳</i><span>IDENTIDADE</span><i>✳</i>
             </div>
           ))}
         </div>
@@ -116,7 +114,7 @@ export default function Home() {
             </p>
           </div>
           <a className="travessia__link" href="#processo" data-reveal>
-            Conhecer o atendimento <span aria-hidden="true">↗</span>
+            Conhecer o atendimento
           </a>
         </div>
       </section>
@@ -134,7 +132,7 @@ export default function Home() {
             novas possibilidades de viver com mais equilíbrio, autonomia e sentido.
           </p>
           <div className="manifesto__actions" data-reveal>
-            <a href="#processo">Conhecer o atendimento <span aria-hidden="true">↗</span></a>
+            <a href="#processo">Conhecer o atendimento</a>
           </div>
         </div>
       </section>
@@ -173,7 +171,7 @@ export default function Home() {
           <div>
             <p className="overline" data-reveal>Uma integração precisa</p>
             <h2 id="methods-title" data-reveal>
-              Método sem rigidez.<br />Profundidade sem pressa.
+              Técnica com sensibilidade.<br />Profundidade no seu tempo.
             </h2>
           </div>
         </div>
@@ -209,7 +207,7 @@ export default function Home() {
             </p>
           </div>
           <div className="belonging__actions" data-reveal>
-            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento <span aria-hidden="true">↗</span></a>
+            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento</a>
           </div>
         </div>
 
@@ -253,7 +251,6 @@ export default function Home() {
         <div className="invitation__actions" data-reveal>
           <a className="mega-cta magnetic" data-magnetic href="#processo">
             <span>Conhecer o processo</span>
-            <span aria-hidden="true">↗</span>
           </a>
           <p>Um primeiro passo para compreender seu momento, sua história e o caminho possível.</p>
         </div>
@@ -269,7 +266,7 @@ export default function Home() {
           <nav className="footer__nav" aria-label="Navegação do rodapé">
             <a href="#processo">O processo</a>
             <a href="#abordagens">Abordagens</a>
-            <a className="footer__contact" href="#convite">Agendar conversa <span aria-hidden="true">↗</span></a>
+            <a className="footer__contact" href="#convite">Agendar conversa</a>
           </nav>
         </div>
 
