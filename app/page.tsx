@@ -50,7 +50,6 @@ export default function Home() {
         </a>
 
         <nav className="header__nav" aria-label="Navegação principal">
-          <a href="#travessia">A travessia</a>
           <a href="#processo">O processo</a>
           <a href="#abordagens">Abordagens</a>
         </nav>
@@ -83,7 +82,7 @@ export default function Home() {
           </p>
           <a className="hero__cta magnetic" data-magnetic href="#processo">
             <span>Conhecer o atendimento</span>
-            <span className="hero__cta-icon" aria-hidden="true">↘</span>
+            <span className="hero__cta-icon" aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
@@ -92,8 +91,8 @@ export default function Home() {
         <div className="signal__track">
           {[0, 1].map((copy) => (
             <div className="signal__group" key={copy}>
-              <span>TRANSIÇÃO</span><i>✳</i><span>MIGRAÇÃO</span><i>✳</i>
-              <span>IDENTIDADE</span><i>✳</i><span>PERTENCIMENTO</span><i>✳</i>
+              <i>✳</i><span>IDENTIDADE</span><i>✳</i><span>PERTENCIMENTO</span>
+              <i>✳</i><span>TRANSIÇÃO</span><i>✳</i><span>MIGRAÇÃO</span>
             </div>
           ))}
         </div>
@@ -101,7 +100,6 @@ export default function Home() {
 
       <section className="travessia" id="travessia" aria-labelledby="travessia-title">
         <div className="travessia__intro" data-reveal>
-          <div className="rail-label">A travessia</div>
           <p>O que escuto no consultório</p>
         </div>
 
@@ -118,7 +116,7 @@ export default function Home() {
             </p>
           </div>
           <a className="travessia__link" href="#processo" data-reveal>
-            Conhecer o atendimento <span aria-hidden="true">↘</span>
+            Conhecer o atendimento <span aria-hidden="true">↗</span>
           </a>
         </div>
       </section>
@@ -136,22 +134,21 @@ export default function Home() {
             novas possibilidades de viver com mais equilíbrio, autonomia e sentido.
           </p>
           <div className="manifesto__actions" data-reveal>
-            <a href="#processo">Conhecer o atendimento <span aria-hidden="true">↘</span></a>
-            <div aria-label="Pilares do processo">
-              <span>Compreender</span><span>Integrar</span><span>Reconstruir</span>
-            </div>
+            <a href="#processo">Conhecer o atendimento <span aria-hidden="true">↗</span></a>
           </div>
         </div>
       </section>
 
       <section className="process" id="processo" aria-labelledby="process-title">
         <div className="process__intro">
-          <div className="rail-label light">Como acontece</div>
+          <div className="process__intro-labels" data-reveal>
+            <span>Como acontece</span>
+            <i aria-hidden="true">✳</i>
+            <span>O atendimento</span>
+          </div>
           <div className="process__intro-content">
-            <p className="overline" data-reveal>O atendimento</p>
             <h2 id="process-title" data-reveal>
-              Não existe protocolo
-              <em>para ser você.</em>
+              Não existe protocolo <em>para ser você.</em>
             </h2>
           </div>
         </div>
@@ -196,7 +193,7 @@ export default function Home() {
         <div className="belonging__content">
           <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
           <h2 id="belonging-title" data-reveal>
-            Pertencer não é voltar.
+            <span>Pertencer não é voltar.</span>
             <em>É poder chegar inteira.</em>
           </h2>
           <div className="belonging__columns" data-reveal>
@@ -213,7 +210,6 @@ export default function Home() {
           </div>
           <div className="belonging__actions" data-reveal>
             <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento <span aria-hidden="true">↗</span></a>
-            <a className="belonging__cta" href="#convite">Começar por aqui</a>
           </div>
         </div>
 
@@ -225,7 +221,6 @@ export default function Home() {
             height="1536"
             loading="lazy"
           />
-          <span>Claudia Thirion<br />Psicóloga intercultural</span>
         </div>
 
         <div className="belonging__ticker" aria-hidden="true">
@@ -265,24 +260,23 @@ export default function Home() {
       </section>
 
       <footer className="footer">
-        <div className="footer__top">
+        <div className="footer__main">
           <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
             <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
             <span className="wordmark__name">Claudia<br />Thirion</span>
           </a>
-          <p>Psicologia para quem vive<br />entre mudanças e mundos.</p>
-          <a className="footer__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
-        </div>
-
-        <div className="footer__signature" aria-label="Claudia Thirion">
-          <span>CLAUDIA</span>
-          <span>THIRION</span>
+          <p className="footer__statement">Psicologia para quem vive entre mudanças e mundos.</p>
+          <nav className="footer__nav" aria-label="Navegação do rodapé">
+            <a href="#processo">O processo</a>
+            <a href="#abordagens">Abordagens</a>
+            <a className="footer__contact" href="#convite">Agendar conversa <span aria-hidden="true">↗</span></a>
+          </nav>
         </div>
 
         <div className="footer__bottom">
-          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
           <span>© {new Date().getFullYear()} Claudia Thirion</span>
-          <span>Feito para atravessar fronteiras.</span>
+          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
+          <a className="footer__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
         </div>
       </footer>
     </main>
