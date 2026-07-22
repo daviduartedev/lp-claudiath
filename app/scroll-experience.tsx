@@ -37,16 +37,16 @@ export default function ScrollExperience() {
       asterisks.forEach((asterisk) => {
         const speed = Number(asterisk.dataset.speed ?? 1);
         const phase = Number(asterisk.dataset.phase ?? 0);
-        const pulse = (Math.sin(scrollUnit * 2.2 * speed + phase) + 1) / 2;
-        const x = Math.sin(scrollUnit * 1.6 * speed + phase) * 32;
-        const y = Math.cos(scrollUnit * 1.25 * speed + phase) * 72;
-        const rotation = scrollUnit * 75 * speed + phase * 50;
+        const pulse = (Math.sin(scrollUnit * 1.25 * speed + phase) + 1) / 2;
+        const x = Math.sin(scrollUnit * 0.9 * speed + phase) * 9;
+        const y = Math.cos(scrollUnit * 0.72 * speed + phase) * 20;
+        const rotation = scrollUnit * 18 * speed + phase * 18;
 
         asterisk.style.setProperty("--asterisk-x", `${x.toFixed(2)}px`);
         asterisk.style.setProperty("--asterisk-y", `${y.toFixed(2)}px`);
         asterisk.style.setProperty("--asterisk-rotation", `${rotation.toFixed(2)}deg`);
-        asterisk.style.setProperty("--asterisk-scale", (0.72 + pulse * 0.48).toFixed(3));
-        asterisk.style.setProperty("--asterisk-opacity", (0.14 + pulse * 0.3).toFixed(3));
+        asterisk.style.setProperty("--asterisk-scale", (0.9 + pulse * 0.1).toFixed(3));
+        asterisk.style.setProperty("--asterisk-opacity", (0.05 + pulse * 0.1).toFixed(3));
       });
     };
     const queueAsteriskUpdate = () => {

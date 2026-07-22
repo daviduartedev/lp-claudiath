@@ -38,40 +38,10 @@ const methods = [
   },
 ];
 
-const scrollAsterisks = [
-  { speed: "0.82", phase: "0.4" },
-  { speed: "1.15", phase: "1.7" },
-  { speed: "0.66", phase: "2.8" },
-  { speed: "1.32", phase: "4.1" },
-  { speed: "0.94", phase: "5.2" },
-  { speed: "1.48", phase: "0.9" },
-  { speed: "0.74", phase: "3.5" },
-  { speed: "1.08", phase: "5.8" },
-];
-
-function ScrollAsterisks() {
-  return (
-    <div className="scroll-asterisks" aria-hidden="true">
-      {scrollAsterisks.map((asterisk, index) => (
-        <span
-          className="scroll-asterisk"
-          data-scroll-asterisk
-          data-speed={asterisk.speed}
-          data-phase={asterisk.phase}
-          key={`${asterisk.speed}-${asterisk.phase}-${index}`}
-        >
-          ✳
-        </span>
-      ))}
-    </div>
-  );
-}
-
 export default function Home() {
   return (
     <main id="inicio">
       <ScrollExperience />
-      <ScrollAsterisks />
 
       <header className="header" id="site-header">
         <a className="wordmark" href="#inicio" aria-label="Claudia Thirion, início">
@@ -150,6 +120,15 @@ export default function Home() {
       </section>
 
       <section className="manifesto" aria-labelledby="manifesto-title">
+        <span
+          className="section-asterisk section-asterisk--manifesto"
+          data-scroll-asterisk
+          data-speed="0.42"
+          data-phase="0.7"
+          aria-hidden="true"
+        >
+          ✳
+        </span>
         <div className="manifesto__shell">
           <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
           <h2 id="manifesto-title" data-reveal>
@@ -196,6 +175,15 @@ export default function Home() {
       </section>
 
       <section className="methods" id="abordagens" aria-labelledby="methods-title">
+        <span
+          className="section-asterisk section-asterisk--methods"
+          data-scroll-asterisk
+          data-speed="0.36"
+          data-phase="2.4"
+          aria-hidden="true"
+        >
+          ✳
+        </span>
         <div className="methods__heading">
           <div className="rail-label light">Abordagens</div>
           <div>
@@ -272,10 +260,10 @@ export default function Home() {
       <section className="invitation" id="convite" aria-labelledby="invitation-title">
         <div className="invitation__media">
           <img
-            src="/images/claudia-convite-sentido.jpg"
+            src="/images/claudia-convite-sentido-v2.png"
             alt="Claudia Thirion sorrindo"
-            width="1600"
-            height="810"
+            width="1672"
+            height="941"
             loading="lazy"
           />
         </div>
