@@ -178,7 +178,7 @@ export default function Home() {
 
         <div className="methods__list">
           {methods.map((method) => (
-            <article className="method" key={method.title} data-reveal>
+            <article className="method" key={method.title} data-reveal tabIndex={0}>
               <span className="method__eyebrow">Abordagem integrada</span>
               <h3>{method.title}</h3>
               <p>{method.text}</p>
@@ -242,10 +242,10 @@ export default function Home() {
       <section className="invitation" id="convite" aria-labelledby="invitation-title">
         <div className="invitation__media">
           <img
-            src="/images/claudia-convite.png"
-            alt="Claudia Thirion"
-            width="1672"
-            height="941"
+            src="/images/claudia-convite-sentido.jpg"
+            alt="Claudia Thirion sorrindo"
+            width="1600"
+            height="810"
             loading="lazy"
           />
         </div>
