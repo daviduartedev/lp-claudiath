@@ -240,19 +240,34 @@ export default function Home() {
       </section>
 
       <section className="invitation" id="convite" aria-labelledby="invitation-title">
-        <div className="invitation__eyebrow">
-          <span>Seu próximo capítulo pode começar aqui</span>
-          <span>Claudia Thirion · Psicologia Intercultural</span>
+        <div className="invitation__media">
+          <img
+            src="/images/claudia-convite.png"
+            alt="Claudia Thirion"
+            width="1672"
+            height="941"
+            loading="lazy"
+          />
         </div>
-        <h2 id="invitation-title" data-reveal>
-          Vamos dar um novo
-          <span>sentido à mudança?</span>
-        </h2>
-        <div className="invitation__actions" data-reveal>
-          <a className="mega-cta magnetic" data-magnetic href="#processo">
-            <span>Conhecer o processo</span>
-          </a>
-          <p>Um primeiro passo para compreender seu momento, sua história e o caminho possível.</p>
+
+        <div className="invitation__content">
+          <div className="invitation__eyebrow" data-reveal>
+            <span>Quando fizer sentido para você</span>
+            <span aria-hidden="true">✳</span>
+          </div>
+          <h2 id="invitation-title" data-reveal>
+            Você não precisa
+            <span>atravessar tudo sozinha.</span>
+          </h2>
+          <p className="invitation__copy" data-reveal>
+            Um espaço seguro para compreender o seu momento, acolher o que mudou
+            e encontrar um caminho possível no seu próprio ritmo.
+          </p>
+          <div className="invitation__actions" data-reveal>
+            <a className="mega-cta magnetic" data-magnetic href="#processo">
+              <span>Conhecer o atendimento</span>
+            </a>
+          </div>
         </div>
       </section>
 
