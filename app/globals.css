@@ -1049,8 +1049,9 @@ p {
 .invitation {
   position: relative;
   display: flex;
-  min-height: max(720px, 92svh);
-  padding: clamp(100px, 10vw, 160px) clamp(24px, 7vw, 130px);
+  height: 100svh;
+  min-height: 720px;
+  padding: clamp(72px, 9vh, 96px) clamp(24px, 7vw, 130px);
   overflow: hidden;
   background: var(--cream);
   align-items: center;
@@ -1077,7 +1078,6 @@ p {
   position: absolute;
   inset: 0;
   z-index: -2;
-  margin-bottom: -20px;
 }
 
 .invitation__media img {
@@ -1114,7 +1114,7 @@ p {
 
 .invitation h2 {
   max-width: 760px;
-  font-size: clamp(3.8rem, 6vw, 7rem);
+  font-size: clamp(3.8rem, min(6vw, 12vh), 7rem);
   line-height: 0.94;
   text-wrap: balance;
 }
@@ -1382,6 +1382,7 @@ p {
 
   .invitation {
     display: block;
+    height: auto;
     min-height: 0;
     padding: 0;
   }
@@ -1520,7 +1521,7 @@ p {
   .resolution { min-height: 850px; padding: 100px 20px; }
   .resolution__copy { margin-top: 48px; font-size: 1.1rem; }
 
-  .invitation { display: block; min-height: 0; padding: 0; }
+  .invitation { display: block; height: auto; min-height: 0; padding: 0; }
   .invitation::after { display: none; }
   .invitation__media {
     position: relative;
