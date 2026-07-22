@@ -7,6 +7,7 @@ export default function ScrollExperience() {
     const root = document.documentElement;
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
+    const scrollActivateItems = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-activate]"));
     const asterisks = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-asterisk]"));
 
     root.classList.add("has-js");
@@ -28,6 +29,16 @@ export default function ScrollExperience() {
       { threshold: 0.15, rootMargin: "0px 0px -8% 0px" },
     );
     revealItems.forEach((item) => observer.observe(item));
+
+    const activationObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          (entry.target as HTMLElement).classList.toggle("is-scroll-active", entry.isIntersecting);
+        });
+      },
+      { threshold: 0, rootMargin: "-34% 0px -34% 0px" },
+    );
+    scrollActivateItems.forEach((item) => activationObserver.observe(item));
 
     let asteriskFrame = 0;
     const updateAsterisks = () => {
@@ -80,6 +91,7 @@ export default function ScrollExperience() {
 
     return () => {
       observer.disconnect();
+      activationObserver.disconnect();
       if (asteriskFrame) window.cancelAnimationFrame(asteriskFrame);
       window.removeEventListener("scroll", queueAsteriskUpdate);
       window.removeEventListener("resize", queueAsteriskUpdate);

@@ -669,11 +669,11 @@ p {
   transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.process__chapter:hover {
+.process__chapter:is(:hover, .is-scroll-active) {
   color: var(--ink);
 }
 
-.process__chapter:hover::before {
+.process__chapter:is(:hover, .is-scroll-active)::before {
   transform: scaleY(1);
 }
 
@@ -716,7 +716,7 @@ p {
   transition: transform 350ms ease;
 }
 
-.process__chapter:hover .process__plus { transform: rotate(45deg); }
+.process__chapter:is(:hover, .is-scroll-active) .process__plus { transform: rotate(45deg); }
 
 .methods {
   position: relative;
@@ -759,6 +759,7 @@ p {
 }
 
 .method {
+  --activation-delay: 0ms;
   position: relative;
   min-height: 420px;
   padding: clamp(28px, 3vw, 44px);
@@ -767,7 +768,10 @@ p {
   border-radius: 24px;
   background: rgba(251, 248, 242, 0.05);
   backdrop-filter: blur(8px);
-  transition: border-color 300ms ease, background 300ms ease, box-shadow 350ms ease;
+  transition:
+    border-color 300ms ease var(--activation-delay),
+    background 300ms ease var(--activation-delay),
+    box-shadow 350ms ease var(--activation-delay);
 }
 
 .method::before {
@@ -780,7 +784,9 @@ p {
     linear-gradient(90deg, rgba(251, 248, 242, 0.06), transparent 68%);
   content: "";
   transform: translateX(-10%);
-  transition: opacity 380ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 380ms ease var(--activation-delay),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--activation-delay);
 }
 
 .method::after {
@@ -794,21 +800,26 @@ p {
   content: "";
   transform: scaleX(0.16);
   transform-origin: left;
-  transition: opacity 300ms ease, transform 520ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    opacity 300ms ease var(--activation-delay),
+    transform 520ms cubic-bezier(0.16, 1, 0.3, 1) var(--activation-delay);
 }
 
-.method:is(:hover, :focus-visible) {
+.method.is-scroll-active:nth-child(2) { --activation-delay: 120ms; }
+.method.is-scroll-active:nth-child(3) { --activation-delay: 240ms; }
+
+.method:is(:hover, :focus-visible, .is-scroll-active) {
   border-color: var(--pink);
   background: rgba(251, 248, 242, 0.1);
   box-shadow: 0 24px 60px rgba(36, 22, 25, 0.22);
 }
 
-.method:is(:hover, :focus-visible)::before {
+.method:is(:hover, :focus-visible, .is-scroll-active)::before {
   opacity: 1;
   transform: translateX(0);
 }
 
-.method:is(:hover, :focus-visible)::after {
+.method:is(:hover, :focus-visible, .is-scroll-active)::after {
   opacity: 1;
   transform: scaleX(1);
 }
@@ -823,7 +834,9 @@ p {
   font-weight: 800;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  transition: color 300ms ease, letter-spacing 380ms ease;
+  transition:
+    color 300ms ease var(--activation-delay),
+    letter-spacing 380ms ease var(--activation-delay);
 }
 
 .method h3 {
@@ -835,7 +848,9 @@ p {
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.04em;
-  transition: color 300ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 300ms ease var(--activation-delay),
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1) var(--activation-delay);
 }
 
 .method p {
@@ -845,20 +860,22 @@ p {
   margin: 0;
   font-size: 1rem;
   line-height: 1.6;
-  transition: color 300ms ease, transform 420ms cubic-bezier(0.16, 1, 0.3, 1);
+  transition:
+    color 300ms ease var(--activation-delay),
+    transform 420ms cubic-bezier(0.16, 1, 0.3, 1) var(--activation-delay);
 }
 
-.method:is(:hover, :focus-visible) .method__eyebrow {
+.method:is(:hover, :focus-visible, .is-scroll-active) .method__eyebrow {
   color: var(--bone);
   letter-spacing: 0.18em;
 }
 
-.method:is(:hover, :focus-visible) h3 {
+.method:is(:hover, :focus-visible, .is-scroll-active) h3 {
   color: var(--pink-hot);
   transform: translateX(8px);
 }
 
-.method:is(:hover, :focus-visible) p {
+.method:is(:hover, :focus-visible, .is-scroll-active) p {
   color: rgba(251, 248, 242, 0.9);
   transform: translateX(8px);
 }
@@ -1048,49 +1065,51 @@ p {
 
 .invitation {
   position: relative;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(470px, 0.95fr);
   height: 100svh;
   min-height: 720px;
-  padding: clamp(72px, 9vh, 96px) clamp(24px, 7vw, 130px);
+  padding: 0;
   overflow: hidden;
   background: var(--cream);
-  align-items: center;
-  justify-content: flex-end;
+  align-items: stretch;
   isolation: isolate;
 }
 
-.invitation::after {
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(
-    90deg,
-    rgba(251, 248, 242, 0) 0%,
-    rgba(251, 248, 242, 0.05) 38%,
-    rgba(251, 248, 242, 0.78) 58%,
-    rgba(251, 248, 242, 0.97) 78%,
-    rgba(251, 248, 242, 0.99) 100%
-  );
-  content: "";
+.invitation__media {
+  position: relative;
+  z-index: 0;
+  height: 100%;
+  min-width: 0;
+  overflow: hidden;
 }
 
-.invitation__media {
+.invitation__media::after {
   position: absolute;
-  inset: 0;
-  z-index: -2;
+  top: 0;
+  right: -1px;
+  bottom: 0;
+  width: 18%;
+  background: linear-gradient(90deg, transparent, var(--cream));
+  content: "";
 }
 
 .invitation__media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: left center;
 }
 
 .invitation__content {
   position: relative;
   z-index: 1;
-  width: min(49vw, 720px);
+  display: flex;
+  width: auto;
+  padding: clamp(72px, 9vh, 96px) clamp(42px, 6vw, 112px);
+  background: var(--cream);
+  flex-direction: column;
+  justify-content: center;
 }
 
 .invitation__eyebrow {
@@ -1390,8 +1409,10 @@ p {
   .invitation__media {
     position: relative;
     inset: auto;
+    height: auto;
     aspect-ratio: 16 / 9;
   }
+  .invitation__media::after { display: none; }
   .invitation__media img { object-position: 28% center; }
   .invitation__content {
     width: 100%;
@@ -1526,8 +1547,10 @@ p {
   .invitation__media {
     position: relative;
     inset: auto;
+    height: auto;
     aspect-ratio: 4 / 3;
   }
+  .invitation__media::after { display: none; }
   .invitation__media img { object-position: 28% center; }
   .invitation__content { width: 100%; padding: 64px 20px 90px; }
   .invitation__eyebrow { margin-bottom: 34px; }

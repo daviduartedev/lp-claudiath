@@ -162,7 +162,7 @@ export default function Home() {
 
         <ol className="process__chapters">
           {process.map((step) => (
-            <li className="process__chapter" key={step.verb} data-reveal>
+            <li className="process__chapter" key={step.verb} data-reveal data-scroll-activate>
               <div className="process__verb">{step.verb}</div>
               <div className="process__body">
                 <h3>{step.title}</h3>
@@ -196,7 +196,7 @@ export default function Home() {
 
         <div className="methods__list">
           {methods.map((method) => (
-            <article className="method" key={method.title} data-reveal tabIndex={0}>
+            <article className="method" key={method.title} data-reveal data-scroll-activate tabIndex={0}>
               <span className="method__eyebrow">Abordagem integrada</span>
               <h3>{method.title}</h3>
               <p>{method.text}</p>
