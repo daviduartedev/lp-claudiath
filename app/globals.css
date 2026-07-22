@@ -1077,6 +1077,7 @@ p {
   position: absolute;
   inset: 0;
   z-index: -2;
+  margin-bottom: -20px;
 }
 
 .invitation__media img {
