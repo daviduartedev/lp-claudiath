@@ -125,28 +125,53 @@ export default function Home() {
           <span>Integração</span>
         </div>
         <div className="manifesto__shell">
-          <div className="manifesto__lead">
+          <div className="manifesto__heading">
             <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
             <h2 id="manifesto-title" data-reveal>
-              Você não precisa caber
-              <span>na vida que ficou para trás.</span>
+              Você não precisa voltar a caber.
+              <span>Pode criar um lugar novo.</span>
             </h2>
-            <span className="manifesto__mark" aria-hidden="true">✳</span>
+            <p className="manifesto__intro" data-reveal>
+              Mudanças profundas não pedem que você apague versões anteriores.
+              Pedem espaço para reconhecer o que ficou, o que mudou e o que
+              começa a nascer.
+            </p>
           </div>
 
-          <div className="manifesto__body" data-tilt>
-            <p className="manifesto__eyebrow" data-reveal>Um movimento possível</p>
-            <h3 data-reveal>O que mudou também pode encontrar lugar.</h3>
-            <p className="manifesto__copy" data-reveal>
-              A experiência ganha sentido quando você pode acolher a própria
-              história sem apagar nenhuma de suas versões — e seguir com mais
-              equilíbrio, autonomia e presença.
-            </p>
-            <div className="manifesto__actions" data-reveal>
-              <a className="magnetic" data-magnetic href="#processo">
-                Conhecer o atendimento
-              </a>
-            </div>
+          <div className="manifesto__cards">
+            <article className="manifesto-card manifesto-card--history" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+              <span className="manifesto-card__number">01</span>
+              <div>
+                <p>O que ficou</p>
+                <h3>Sua história continua com você.</h3>
+                <span>Ela não precisa ser apagada para que a vida siga.</span>
+              </div>
+            </article>
+
+            <article className="manifesto-card manifesto-card--change" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+              <span className="manifesto-card__number">02</span>
+              <div>
+                <p>O que mudou</p>
+                <h3>Novos contextos também transformam.</h3>
+                <span>Identidade, vínculos e a própria forma de pertencer.</span>
+              </div>
+            </article>
+
+            <article className="manifesto-card manifesto-card--future" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+              <span className="manifesto-card__number">03</span>
+              <div>
+                <p>O que pode nascer</p>
+                <h3>Um jeito mais inteiro de seguir.</h3>
+                <span>Com tempo, presença e espaço para ser quem você é agora.</span>
+              </div>
+            </article>
+          </div>
+
+          <div className="manifesto__actions" data-reveal>
+            <a className="magnetic" data-magnetic href="#processo">
+              Conhecer o atendimento
+            </a>
+            <span aria-hidden="true">✳</span>
           </div>
         </div>
       </section>

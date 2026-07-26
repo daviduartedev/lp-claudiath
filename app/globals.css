@@ -525,34 +525,30 @@ p {
 .manifesto {
   position: relative;
   min-height: 100svh;
-  padding: 0 clamp(24px, 5vw, 92px);
+  padding: clamp(120px, 12vw, 190px) clamp(24px, 5vw, 92px);
   overflow: hidden;
   color: var(--bone);
   background:
-    linear-gradient(
-      90deg,
-      var(--ink) 0%,
-      var(--ink) 58%,
-      var(--pink) 58%,
-      var(--pink) 100%
-    );
+    radial-gradient(circle at 86% 12%, rgba(231, 197, 202, 0.16), transparent 31%),
+    radial-gradient(circle at 12% 88%, rgba(245, 236, 217, 0.07), transparent 27%),
+    var(--ink);
   isolation: isolate;
 }
 
 .manifesto::before {
   position: absolute;
-  top: 50%;
-  right: -18vw;
+  top: -32vw;
+  right: -24vw;
   z-index: -1;
-  width: min(58vw, 840px);
+  width: min(72vw, 1050px);
   aspect-ratio: 1;
-  border: 1px solid rgba(81, 74, 70, 0.24);
+  border: 1px solid rgba(231, 197, 202, 0.16);
   border-radius: 50%;
   box-shadow:
-    0 0 0 7vw rgba(81, 74, 70, 0.035),
-    0 0 0 14vw rgba(81, 74, 70, 0.025);
+    0 0 0 8vw rgba(231, 197, 202, 0.025),
+    0 0 0 16vw rgba(231, 197, 202, 0.018);
   content: "";
-  transform: translate3d(var(--motion-x), -50%, 0) rotate(var(--motion-rotate));
+  transform: translate3d(var(--motion-x), var(--motion-y), 0) rotate(var(--motion-rotate));
   will-change: transform;
 }
 
@@ -575,140 +571,206 @@ p {
 }
 
 .manifesto__index span:last-child {
-  color: rgba(81, 74, 70, 0.62);
+  color: rgba(245, 236, 217, 0.48);
 }
 
 .manifesto__shell {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.9fr);
-  min-height: 100svh;
   max-width: 1480px;
   margin: 0 auto;
-  align-items: stretch;
 }
 
-.manifesto__lead {
-  position: relative;
-  display: flex;
-  padding: clamp(130px, 14vw, 210px) clamp(48px, 7vw, 120px) clamp(100px, 10vw, 150px) 0;
-  flex-direction: column;
-  justify-content: center;
-  transform: translate3d(0, var(--motion-y-soft), 0);
-  will-change: transform;
+.manifesto__heading {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.5fr);
+  gap: clamp(42px, 7vw, 110px);
+  align-items: end;
 }
 
-.manifesto__lead > .overline {
-  margin-bottom: clamp(50px, 6vw, 82px);
+.manifesto__heading > .overline {
+  grid-column: 1 / -1;
+  margin-bottom: clamp(30px, 3vw, 46px);
   color: rgba(245, 236, 217, 0.72);
 }
 
-.manifesto__lead h2 {
-  max-width: 880px;
+.manifesto__heading h2 {
+  max-width: 950px;
   margin: 0;
   font-family: var(--font-display), "Helvetica Neue", sans-serif;
-  font-size: clamp(3.8rem, 6.25vw, 7.2rem);
+  font-size: clamp(3.8rem, 6.4vw, 7.4rem);
   font-weight: 400;
-  line-height: 0.98;
+  line-height: 0.95;
   letter-spacing: -0.075em;
   text-wrap: balance;
 }
 
-.manifesto__lead h2 span {
+.manifesto__heading h2 span {
   display: block;
-  margin-top: 0.18em;
-  color: var(--pink-hot);
+  margin-top: 0.16em;
+  color: var(--pink);
   font-family: var(--font-script), cursive;
-  font-size: 1.12em;
+  font-size: 1.08em;
   font-weight: 400;
   letter-spacing: 0;
-  line-height: 0.83;
+  line-height: 0.8;
 }
 
-.manifesto__mark {
-  position: absolute;
-  right: clamp(30px, 5vw, 82px);
-  bottom: clamp(36px, 5vw, 72px);
-  color: var(--pink);
-  font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(1.4rem, 2.8vw, 3rem);
-  line-height: 1;
-  opacity: 0.65;
-  transform: rotate(var(--motion-rotate));
-  will-change: transform;
+.manifesto__intro {
+  max-width: 440px;
+  margin: 0 0 0.7em;
+  color: rgba(245, 236, 217, 0.72);
+  font-size: clamp(1rem, 1.25vw, 1.18rem);
+  line-height: 1.72;
 }
 
-.manifesto__body {
+.manifesto__cards {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 26px);
+  margin-top: clamp(80px, 9vw, 130px);
+  align-items: start;
+}
+
+.manifesto-card {
   --tilt-x: 0deg;
   --tilt-y: 0deg;
   --tilt-lift: 0px;
+  --card-scroll-lift: 0px;
   position: relative;
-  align-self: center;
-  margin: clamp(100px, 10vw, 150px) 0 clamp(80px, 8vw, 120px) clamp(30px, 4vw, 72px);
-  padding: clamp(36px, 4.5vw, 70px);
+  display: flex;
+  min-height: 440px;
+  padding: clamp(28px, 3vw, 44px);
+  overflow: hidden;
   color: var(--ink);
-  border: 1px solid rgba(81, 74, 70, 0.26);
-  border-radius: 4px 44px 4px 4px;
-  background: rgba(251, 248, 242, 0.58);
-  box-shadow: 0 34px 90px rgba(81, 74, 70, 0.14);
-  backdrop-filter: blur(14px);
+  border: 1px solid transparent;
+  border-radius: 28px 28px 8px 28px;
+  background: var(--cream);
+  flex-direction: column;
+  justify-content: space-between;
   transform:
-    perspective(1100px)
-    translate3d(0, calc(var(--motion-y-soft) + var(--tilt-lift)), 0)
+    perspective(1000px)
+    translate3d(0, calc(var(--tilt-lift) + var(--card-scroll-lift)), 0)
     rotateX(var(--tilt-x))
     rotateY(var(--tilt-y));
   transform-style: preserve-3d;
-  transition: transform 160ms ease-out, box-shadow 300ms ease;
+  transition:
+    transform 180ms ease-out,
+    border-color 320ms ease,
+    box-shadow 420ms ease,
+    background 320ms ease;
   will-change: transform;
 }
 
-.manifesto__body::before {
+.manifesto-card::before {
   position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 11px;
-  aspect-ratio: 1;
-  color: var(--pink-hot);
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0.38), transparent 42%);
+  content: "";
+  transform: translateX(-18%);
+  transition: opacity 360ms ease, transform 600ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.manifesto-card::after {
+  position: absolute;
+  top: clamp(26px, 3vw, 42px);
+  right: clamp(26px, 3vw, 42px);
+  color: currentColor;
   content: "✳";
   font-family: var(--font-display), Georgia, serif;
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   line-height: 1;
+  opacity: 0.42;
+  transition: transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 300ms ease;
 }
 
-.manifesto__body:hover {
-  box-shadow: 0 42px 110px rgba(81, 74, 70, 0.22);
+.manifesto-card--history {
+  grid-column: span 5;
 }
 
-.manifesto__eyebrow {
-  margin-bottom: clamp(34px, 4vw, 52px);
+.manifesto-card--change {
+  grid-column: span 3;
+  min-height: 380px;
+  margin-top: clamp(58px, 6vw, 88px);
+  color: var(--bone);
+  border-color: rgba(245, 236, 217, 0.24);
+  background: rgba(245, 236, 217, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.manifesto-card--future {
+  grid-column: span 4;
+  min-height: 420px;
+  margin-top: clamp(22px, 3vw, 42px);
+  background: var(--pink);
+}
+
+.manifesto-card__number {
+  position: relative;
+  z-index: 1;
   font-size: 0.58rem;
   font-weight: 800;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
-.manifesto__body h3 {
+.manifesto-card > div {
+  position: relative;
+  z-index: 1;
+  transform: translateZ(24px);
+}
+
+.manifesto-card > div > p {
+  margin-bottom: 22px;
+  font-size: 0.57rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.manifesto-card h3 {
   margin: 0;
   font-family: var(--font-display), Georgia, serif;
-  font-size: clamp(2.3rem, 3.4vw, 4.1rem);
+  font-size: clamp(2rem, 2.8vw, 3.5rem);
   font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.055em;
+  line-height: 1;
+  letter-spacing: -0.05em;
   text-wrap: balance;
 }
 
-.manifesto__copy {
-  max-width: 520px;
-  margin: clamp(34px, 4vw, 48px) 0 0;
-  color: rgba(81, 74, 70, 0.82);
-  font-size: clamp(1rem, 1.2vw, 1.15rem);
-  line-height: 1.68;
+.manifesto-card > div > span {
+  display: block;
+  max-width: 360px;
+  margin-top: 24px;
+  color: currentColor;
+  font-size: 0.98rem;
+  line-height: 1.58;
+  opacity: 0.76;
+}
+
+.manifesto-card:is(:hover, :focus-visible, .is-scroll-active) {
+  --card-scroll-lift: -10px;
+  border-color: var(--pink);
+  box-shadow: 0 38px 90px rgba(24, 17, 15, 0.28);
+}
+
+.manifesto-card:is(:hover, :focus-visible, .is-scroll-active)::before {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.manifesto-card:is(:hover, :focus-visible, .is-scroll-active)::after {
+  opacity: 0.9;
+  transform: rotate(90deg) scale(1.18);
 }
 
 .manifesto__actions {
   display: flex;
-  margin-top: clamp(38px, 5vw, 56px);
+  gap: 22px;
+  margin-top: clamp(58px, 7vw, 94px);
+  align-items: center;
 }
 
 .manifesto__actions > a {
@@ -717,8 +779,10 @@ p {
   display: inline-flex;
   min-height: 54px;
   padding: 0 24px;
-  border: 1px solid var(--ink);
+  border: 1px solid var(--pink-hot);
   border-radius: 999px;
+  color: var(--ink);
+  background: var(--pink-hot);
   align-items: center;
   justify-content: center;
   font-size: 0.62rem;
@@ -731,8 +795,14 @@ p {
 
 .manifesto__actions > a:hover,
 .manifesto__actions > a:focus-visible {
-  color: var(--bone);
-  background: var(--ink);
+  color: var(--ink);
+  background: var(--pink);
+}
+
+.manifesto__actions > span {
+  color: var(--pink);
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1rem;
 }
 
 .process {
@@ -1824,18 +1894,22 @@ p {
     rotateY(var(--tilt-y));
 }
 
-.manifesto__body [data-reveal]:nth-child(2),
+.has-js .manifesto-card[data-reveal].is-visible {
+  transform:
+    perspective(1000px)
+    translate3d(0, calc(var(--tilt-lift) + var(--card-scroll-lift)), 0)
+    rotateX(var(--tilt-x))
+    rotateY(var(--tilt-y));
+}
+
+.manifesto__cards .manifesto-card:nth-child(2),
 .methods__list [data-reveal]:nth-child(2) {
   transition-delay: 110ms;
 }
 
-.manifesto__body [data-reveal]:nth-child(3),
+.manifesto__cards .manifesto-card:nth-child(3),
 .methods__list [data-reveal]:nth-child(3) {
   transition-delay: 220ms;
-}
-
-.manifesto__body [data-reveal]:nth-child(4) {
-  transition-delay: 330ms;
 }
 
 .magnetic {
@@ -1889,32 +1963,34 @@ p {
 
 @media (max-width: 900px) {
   .manifesto {
-    padding: 0 clamp(24px, 6vw, 54px);
-    background:
-      linear-gradient(
-        180deg,
-        var(--ink) 0%,
-        var(--ink) 56%,
-        var(--pink) 56%,
-        var(--pink) 100%
-      );
+    min-height: 0;
+    padding: 130px clamp(24px, 6vw, 54px);
   }
-  .manifesto__index span:last-child {
-    color: rgba(245, 236, 217, 0.48);
-  }
-  .manifesto__shell {
+  .manifesto__heading {
     grid-template-columns: 1fr;
-    min-height: auto;
+    gap: 36px;
   }
-  .manifesto__lead {
-    min-height: 72svh;
-    padding: 140px 0 110px;
+  .manifesto__heading > .overline {
+    margin-bottom: 18px;
   }
-  .manifesto__lead h2 {
+  .manifesto__heading h2 {
     max-width: 760px;
   }
-  .manifesto__body {
-    margin: 80px clamp(0px, 4vw, 34px) 100px;
+  .manifesto__intro {
+    max-width: 620px;
+    margin: 0;
+  }
+  .manifesto-card--history {
+    grid-column: span 7;
+  }
+  .manifesto-card--change {
+    grid-column: span 5;
+    margin-top: 48px;
+  }
+  .manifesto-card--future {
+    grid-column: 1 / -1;
+    min-height: 340px;
+    margin-top: 0;
   }
 }
 
@@ -2023,22 +2099,37 @@ p {
   .travessia__stage h2 { font-size: clamp(3.1rem, 14vw, 4.7rem); }
   .travessia__notes { grid-template-columns: 1fr; gap: 28px; margin-top: 64px; }
 
-  .manifesto { min-height: 0; padding: 0 20px; }
+  .manifesto { min-height: 0; padding: 110px 20px; }
   .manifesto__index { top: 28px; right: 20px; left: 20px; }
-  .manifesto__lead { min-height: 700px; padding: 110px 0 100px; }
-  .manifesto__lead > .overline { max-width: 260px; margin-bottom: 52px; }
-  .manifesto__lead h2 { font-size: clamp(3.1rem, 14.5vw, 4.9rem); }
-  .manifesto__mark { right: 0; bottom: 48px; }
-  .manifesto__body {
-    margin: 58px 0 80px;
-    padding: 34px 26px 38px;
-    border-radius: 3px 28px 3px 3px;
-    transform: none;
+  .manifesto__heading { display: block; }
+  .manifesto__heading > .overline {
+    max-width: 280px;
+    margin-bottom: 50px;
   }
-  .manifesto__body h3 { font-size: clamp(2.45rem, 11vw, 3.5rem); }
-  .manifesto__copy { margin-top: 48px; }
+  .manifesto__heading h2 { font-size: clamp(3.1rem, 14.5vw, 4.9rem); }
+  .manifesto__intro { margin-top: 42px; }
+  .manifesto__cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 62px;
+  }
+  .manifesto-card--history,
+  .manifesto-card--change,
+  .manifesto-card--future {
+    grid-column: 1;
+    min-height: 330px;
+    margin-top: 0;
+  }
+  .manifesto-card {
+    padding: 28px;
+    border-radius: 22px 22px 6px 22px;
+  }
+  .manifesto-card h3 {
+    font-size: clamp(2.2rem, 10.5vw, 3.3rem);
+  }
   .manifesto__actions { align-items: stretch; flex-direction: column; }
   .manifesto__actions > a { justify-content: center; }
+  .manifesto__actions > span { display: none; }
 
   .process__intro {
     min-height: auto;
