@@ -9,11 +9,15 @@ export default function ScrollExperience() {
     const revealItems = Array.from(document.querySelectorAll<HTMLElement>("[data-reveal]"));
     const scrollActivateItems = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-activate]"));
     const asterisks = Array.from(document.querySelectorAll<HTMLElement>("[data-scroll-asterisk]"));
+    const motionSections = Array.from(document.querySelectorAll<HTMLElement>("[data-motion-section]"));
+    const tiltItems = Array.from(document.querySelectorAll<HTMLElement>("[data-tilt]"));
 
     root.classList.add("has-js");
 
     if (reducedMotion) {
       revealItems.forEach((item) => item.classList.add("is-visible"));
+      scrollActivateItems.forEach((item) => item.classList.add("is-scroll-active"));
+      root.style.setProperty("--scroll-progress", "1");
       return () => root.classList.remove("has-js");
     }
 
@@ -40,10 +44,31 @@ export default function ScrollExperience() {
     );
     scrollActivateItems.forEach((item) => activationObserver.observe(item));
 
-    let asteriskFrame = 0;
-    const updateAsterisks = () => {
-      asteriskFrame = 0;
+    let motionFrame = 0;
+    const updateMotion = () => {
+      motionFrame = 0;
+      const viewportHeight = Math.max(window.innerHeight, 1);
+      const pageRange = Math.max(document.documentElement.scrollHeight - viewportHeight, 1);
+      const pageProgress = Math.min(Math.max(window.scrollY / pageRange, 0), 1);
       const scrollUnit = window.scrollY / Math.max(window.innerHeight, 1);
+
+      root.style.setProperty("--scroll-progress", pageProgress.toFixed(4));
+
+      motionSections.forEach((section) => {
+        const rect = section.getBoundingClientRect();
+        const rawOffset = (rect.top + rect.height / 2 - viewportHeight / 2) / viewportHeight;
+        const offset = Math.min(Math.max(rawOffset, -1.5), 1.5);
+        const progress = Math.min(
+          Math.max((viewportHeight - rect.top) / (viewportHeight + rect.height), 0),
+          1,
+        );
+
+        section.style.setProperty("--motion-y", `${(-offset * 64).toFixed(2)}px`);
+        section.style.setProperty("--motion-y-soft", `${(-offset * 28).toFixed(2)}px`);
+        section.style.setProperty("--motion-x", `${(offset * 42).toFixed(2)}px`);
+        section.style.setProperty("--motion-rotate", `${(offset * 5).toFixed(2)}deg`);
+        section.style.setProperty("--motion-progress", progress.toFixed(4));
+      });
 
       asterisks.forEach((asterisk) => {
         const speed = Number(asterisk.dataset.speed ?? 1);
@@ -60,13 +85,13 @@ export default function ScrollExperience() {
         asterisk.style.setProperty("--asterisk-opacity", (0.05 + pulse * 0.1).toFixed(3));
       });
     };
-    const queueAsteriskUpdate = () => {
-      if (!asteriskFrame) asteriskFrame = window.requestAnimationFrame(updateAsterisks);
+    const queueMotionUpdate = () => {
+      if (!motionFrame) motionFrame = window.requestAnimationFrame(updateMotion);
     };
 
-    updateAsterisks();
-    window.addEventListener("scroll", queueAsteriskUpdate, { passive: true });
-    window.addEventListener("resize", queueAsteriskUpdate);
+    updateMotion();
+    window.addEventListener("scroll", queueMotionUpdate, { passive: true });
+    window.addEventListener("resize", queueMotionUpdate);
 
     const magneticItems = Array.from(document.querySelectorAll<HTMLElement>("[data-magnetic]"));
     const magneticCleanups = magneticItems.map((item) => {
@@ -89,13 +114,38 @@ export default function ScrollExperience() {
       };
     });
 
+    const tiltCleanups = tiltItems.map((item) => {
+      const move = (event: PointerEvent) => {
+        if (event.pointerType === "touch") return;
+        const rect = item.getBoundingClientRect();
+        const horizontal = (event.clientX - rect.left) / Math.max(rect.width, 1) - 0.5;
+        const vertical = (event.clientY - rect.top) / Math.max(rect.height, 1) - 0.5;
+        item.style.setProperty("--tilt-x", `${(-vertical * 7).toFixed(2)}deg`);
+        item.style.setProperty("--tilt-y", `${(horizontal * 7).toFixed(2)}deg`);
+        item.style.setProperty("--tilt-lift", "-8px");
+      };
+      const leave = () => {
+        item.style.setProperty("--tilt-x", "0deg");
+        item.style.setProperty("--tilt-y", "0deg");
+        item.style.setProperty("--tilt-lift", "0px");
+      };
+      item.addEventListener("pointermove", move);
+      item.addEventListener("pointerleave", leave);
+      return () => {
+        item.removeEventListener("pointermove", move);
+        item.removeEventListener("pointerleave", leave);
+      };
+    });
+
     return () => {
       observer.disconnect();
       activationObserver.disconnect();
-      if (asteriskFrame) window.cancelAnimationFrame(asteriskFrame);
-      window.removeEventListener("scroll", queueAsteriskUpdate);
-      window.removeEventListener("resize", queueAsteriskUpdate);
+      if (motionFrame) window.cancelAnimationFrame(motionFrame);
+      window.removeEventListener("scroll", queueMotionUpdate);
+      window.removeEventListener("resize", queueMotionUpdate);
       magneticCleanups.forEach((cleanup) => cleanup());
+      tiltCleanups.forEach((cleanup) => cleanup());
+      root.style.removeProperty("--scroll-progress");
       root.classList.remove("has-js");
     };
   }, []);

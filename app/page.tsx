@@ -59,7 +59,7 @@ export default function Home() {
         </a>
       </header>
 
-      <section className="hero" aria-labelledby="hero-title">
+      <section className="hero" aria-labelledby="hero-title" data-motion-section>
         <div className="hero__media" aria-hidden="true">
           <img
             src="/images/claudia-hero-main.png"
@@ -96,7 +96,7 @@ export default function Home() {
         </div>
       </div>
 
-      <section className="travessia" id="travessia" aria-labelledby="travessia-title">
+      <section className="travessia" id="travessia" aria-labelledby="travessia-title" data-motion-section>
         <div className="travessia__intro" data-reveal>
           <p>O que escuto no consultório</p>
         </div>
@@ -119,34 +119,39 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="manifesto" aria-labelledby="manifesto-title">
-        <span
-          className="section-asterisk section-asterisk--manifesto"
-          data-scroll-asterisk
-          data-speed="0.42"
-          data-phase="0.7"
-          aria-hidden="true"
-        >
-          ✳
-        </span>
+      <section className="manifesto" id="integracao" aria-labelledby="manifesto-title" data-motion-section>
+        <div className="manifesto__index" aria-hidden="true">
+          <span>02</span>
+          <span>Integração</span>
+        </div>
         <div className="manifesto__shell">
-          <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
-          <h2 id="manifesto-title" data-reveal>
-            É sobre integrar
-            <span>o que mudou</span>
-            sem perder quem você é.
-          </h2>
-          <p className="manifesto__copy" data-reveal>
-            Compreender a experiência, integrar a própria história e construir
-            novas possibilidades de viver com mais equilíbrio, autonomia e sentido.
-          </p>
-          <div className="manifesto__actions" data-reveal>
-            <a href="#processo">Conhecer o atendimento</a>
+          <div className="manifesto__lead">
+            <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
+            <h2 id="manifesto-title" data-reveal>
+              Você não precisa caber
+              <span>na vida que ficou para trás.</span>
+            </h2>
+            <span className="manifesto__mark" aria-hidden="true">✳</span>
+          </div>
+
+          <div className="manifesto__body" data-tilt>
+            <p className="manifesto__eyebrow" data-reveal>Um movimento possível</p>
+            <h3 data-reveal>O que mudou também pode encontrar lugar.</h3>
+            <p className="manifesto__copy" data-reveal>
+              A experiência ganha sentido quando você pode acolher a própria
+              história sem apagar nenhuma de suas versões — e seguir com mais
+              equilíbrio, autonomia e presença.
+            </p>
+            <div className="manifesto__actions" data-reveal>
+              <a className="magnetic" data-magnetic href="#processo">
+                Conhecer o atendimento
+              </a>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="process" id="processo" aria-labelledby="process-title">
+      <section className="process" id="processo" aria-labelledby="process-title" data-motion-section>
         <div className="process__intro">
           <div className="process__intro-labels" data-reveal>
             <span>Como acontece</span>
@@ -174,7 +179,7 @@ export default function Home() {
         </ol>
       </section>
 
-      <section className="methods" id="abordagens" aria-labelledby="methods-title">
+      <section className="methods" id="abordagens" aria-labelledby="methods-title" data-motion-section>
         <span
           className="section-asterisk section-asterisk--methods"
           data-scroll-asterisk
@@ -196,7 +201,7 @@ export default function Home() {
 
         <div className="methods__list">
           {methods.map((method) => (
-            <article className="method" key={method.title} data-reveal data-scroll-activate tabIndex={0}>
+            <article className="method" key={method.title} data-reveal data-scroll-activate data-tilt tabIndex={0}>
               <span className="method__eyebrow">Abordagem integrada</span>
               <h3>{method.title}</h3>
               <p>{method.text}</p>
@@ -205,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="belonging" aria-labelledby="belonging-title">
+      <section className="belonging" aria-labelledby="belonging-title" data-motion-section>
         <div className="belonging__content">
           <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
           <h2 id="belonging-title" data-reveal>
@@ -244,7 +249,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="resolution" aria-labelledby="resolution-title">
+      <section className="resolution" aria-labelledby="resolution-title" data-motion-section>
         <p className="overline" data-reveal>Para além do alívio</p>
         <h2 id="resolution-title" data-reveal>
           Não apenas aliviar sintomas.
@@ -257,50 +262,107 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="invitation" id="convite" aria-labelledby="invitation-title">
-        <div className="invitation__media">
-          <img
-            src="/images/claudia-convite-sentido-v2.png"
-            alt="Claudia Thirion sorrindo"
-            width="1672"
-            height="941"
-            loading="lazy"
-          />
-        </div>
-
+      <section className="invitation" id="convite" aria-labelledby="invitation-title" data-motion-section>
         <div className="invitation__content">
           <div className="invitation__eyebrow" data-reveal>
             <span>Quando fizer sentido para você</span>
             <span aria-hidden="true">✳</span>
           </div>
           <h2 id="invitation-title" data-reveal>
-            Você não precisa
-            <span>atravessar tudo sozinha.</span>
+            Você pode chegar
+            <span>como está.</span>
           </h2>
           <p className="invitation__copy" data-reveal>
-            Um espaço seguro para compreender o seu momento, acolher o que mudou
-            e encontrar um caminho possível no seu próprio ritmo.
+            A primeira conversa não exige certezas. É um espaço para contar o
+            que está acontecendo, entender como posso acompanhar você e sentir,
+            com calma, se este caminho faz sentido.
           </p>
           <div className="invitation__actions" data-reveal>
-            <a className="mega-cta magnetic" data-magnetic href="#processo">
-              <span>Conhecer o atendimento</span>
+            <a
+              className="mega-cta magnetic"
+              data-magnetic
+              href="https://wa.me/?text=Ol%C3%A1%2C%20Claudia!%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span>Agendar uma conversa</span>
             </a>
+            <p>Sem fórmulas prontas.<br />No seu ritmo.</p>
+          </div>
+        </div>
+
+        <div className="invitation__media" data-reveal>
+          <div className="invitation__photo">
+            <img
+              src="/images/claudia-consultorio.png"
+              alt="Claudia Thirion em seu consultório"
+              width="1024"
+              height="1448"
+              loading="lazy"
+            />
+          </div>
+          <div className="invitation__media-note" aria-hidden="true">
+            <span>Presença</span>
+            <i>✳</i>
+            <span>Escuta</span>
+            <i>✳</i>
+            <span>Cuidado</span>
           </div>
         </div>
       </section>
 
-      <footer className="footer">
+      <a
+        className="whatsapp-float"
+        href="https://wa.me/?text=Ol%C3%A1%2C%20Claudia!%20Gostaria%20de%20conhecer%20melhor%20o%20atendimento."
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Conversar com Claudia pelo WhatsApp"
+      >
+        <span className="whatsapp-float__label">WhatsApp</span>
+        <span className="whatsapp-float__icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+            <path d="M16.03 3.2A12.67 12.67 0 0 0 5.2 22.43L3.5 28.8l6.52-1.67A12.7 12.7 0 1 0 16.03 3.2Zm0 22.98c-2.05 0-4.05-.55-5.8-1.58l-.42-.25-3.87.99 1.03-3.76-.27-.43a10.24 10.24 0 1 1 9.33 5.03Zm5.62-7.67c-.31-.15-1.82-.9-2.1-1-.28-.1-.49-.15-.7.16-.2.3-.8 1-.98 1.2-.18.2-.36.23-.67.08-.3-.15-1.3-.48-2.47-1.53a9.27 9.27 0 0 1-1.7-2.12c-.18-.3-.02-.47.13-.62.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.38-.02-.54-.08-.15-.7-1.67-.95-2.3-.25-.6-.5-.52-.7-.53h-.58c-.2 0-.54.08-.82.39-.28.3-1.08 1.05-1.08 2.56s1.1 2.98 1.26 3.18c.15.2 2.17 3.31 5.25 4.64.74.32 1.31.5 1.76.65.74.23 1.4.2 1.93.12.59-.09 1.82-.75 2.08-1.46.26-.72.26-1.34.18-1.47-.07-.12-.28-.2-.59-.36Z" />
+          </svg>
+        </span>
+      </a>
+
+      <footer className="footer" id="rodape" data-motion-section>
+        <div className="footer__topline">
+          <span>Claudia Thirion</span>
+          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
+        </div>
+
         <div className="footer__main">
-          <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
-            <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
-            <span className="wordmark__name">Claudia<br />Thirion</span>
-          </a>
-          <p className="footer__statement">Psicologia para quem vive entre mudanças e mundos.</p>
-          <nav className="footer__nav" aria-label="Navegação do rodapé">
-            <a href="#processo">O processo</a>
-            <a href="#abordagens">Abordagens</a>
-            <a className="footer__contact" href="#convite">Agendar conversa</a>
-          </nav>
+          <div className="footer__brand">
+            <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
+              <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
+              <span className="wordmark__name">Claudia<br />Thirion</span>
+            </a>
+            <p className="footer__statement">Psicologia para quem vive entre mudanças e mundos.</p>
+          </div>
+
+          <div className="footer__conversation">
+            <p>Quando fizer sentido para você</p>
+            <h2>Há um caminho possível para atravessar.</h2>
+            <a className="footer__contact magnetic" data-magnetic href="#convite">
+              Agendar conversa
+            </a>
+          </div>
+
+          <div className="footer__directory">
+            <nav className="footer__nav" aria-label="Navegação do rodapé">
+              <span>Explorar</span>
+              <a href="#inicio">Início</a>
+              <a href="#processo">O processo</a>
+              <a href="#abordagens">Abordagens</a>
+            </nav>
+            <div className="footer__services">
+              <span>Atendimento</span>
+              <p>Psicologia Intercultural</p>
+              <p>EMDR</p>
+              <p>Brainspotting</p>
+            </div>
+          </div>
         </div>
 
         <div className="footer__bottom">
