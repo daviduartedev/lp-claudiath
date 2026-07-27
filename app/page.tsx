@@ -176,7 +176,6 @@ export default function Home() {
 
           <div className="manifesto__cards">
             <article className="manifesto-card manifesto-card--history" data-reveal data-scroll-activate tabIndex={0}>
-              <span className="manifesto-card__number">01</span>
               <div>
                 <p>O que ficou</p>
                 <h3>Sua história segue sendo parte de você.</h3>
@@ -185,7 +184,6 @@ export default function Home() {
             </article>
 
             <article className="manifesto-card manifesto-card--change" data-reveal data-scroll-activate tabIndex={0}>
-              <span className="manifesto-card__number">02</span>
               <div>
                 <p>O que mudou</p>
                 <h3>Novos contextos também transformam por dentro.</h3>
@@ -194,7 +192,6 @@ export default function Home() {
             </article>
 
             <article className="manifesto-card manifesto-card--future" data-reveal data-scroll-activate tabIndex={0}>
-              <span className="manifesto-card__number">03</span>
               <div>
                 <p>O que pode nascer</p>
                 <h3>Um jeito mais inteiro de seguir.</h3>
