@@ -1,4 +1,5 @@
 import ScrollExperience from "./scroll-experience";
+import WhatsAppLeadForm from "./whatsapp-lead-form";
 
 const process = [
   {
@@ -52,9 +53,10 @@ export default function Home() {
         <nav className="header__nav" aria-label="Navegação principal">
           <a href="#processo">O processo</a>
           <a href="#abordagens">Abordagens</a>
+          <a href="#formulario">Contato</a>
         </nav>
 
-        <a className="header__cta magnetic" data-magnetic href="#convite">
+        <a className="header__cta magnetic" data-magnetic href="#formulario">
           <span>Agendar conversa</span>
         </a>
       </header>
@@ -119,6 +121,45 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="belonging" aria-labelledby="belonging-title" data-motion-section>
+        <div className="belonging__content">
+          <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
+          <h2 id="belonging-title" data-reveal>
+            <span>Pertencer não é voltar.</span>
+            <em>É poder chegar inteira.</em>
+          </h2>
+          <div className="belonging__columns" data-reveal>
+            <p>
+              Ao longo do processo, investigamos as mudanças na identidade, o
+              pertencimento, os lutos migratórios e os vínculos afetivos e
+              profissionais em seus diferentes contextos culturais.
+            </p>
+            <p>
+              Se você é imigrante, expatriada ou está vivendo uma grande
+              transição de vida, este é um espaço ético, seguro e acolhedor para
+              compreender a sua experiência sem reduzir quem você é a um sintoma.
+            </p>
+          </div>
+          <div className="belonging__actions" data-reveal>
+            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento</a>
+          </div>
+        </div>
+
+        <div className="belonging__media" data-reveal>
+          <img
+            src="/images/claudia-pausa.png"
+            alt="Claudia Thirion em seu espaço de atendimento"
+            width="1024"
+            height="1536"
+            loading="lazy"
+          />
+        </div>
+
+        <div className="belonging__ticker" aria-hidden="true">
+          <span>PERTENCIMENTO</span>
+        </div>
+      </section>
+
       <section className="manifesto" id="integracao" aria-labelledby="manifesto-title" data-motion-section>
         <div className="manifesto__index" aria-hidden="true">
           <span>02</span>
@@ -139,7 +180,7 @@ export default function Home() {
           </div>
 
           <div className="manifesto__cards">
-            <article className="manifesto-card manifesto-card--history" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+            <article className="manifesto-card manifesto-card--history" data-reveal data-scroll-activate tabIndex={0}>
               <span className="manifesto-card__number">01</span>
               <div>
                 <p>O que ficou</p>
@@ -148,7 +189,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="manifesto-card manifesto-card--change" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+            <article className="manifesto-card manifesto-card--change" data-reveal data-scroll-activate tabIndex={0}>
               <span className="manifesto-card__number">02</span>
               <div>
                 <p>O que mudou</p>
@@ -157,7 +198,7 @@ export default function Home() {
               </div>
             </article>
 
-            <article className="manifesto-card manifesto-card--future" data-reveal data-scroll-activate data-tilt tabIndex={0}>
+            <article className="manifesto-card manifesto-card--future" data-reveal data-scroll-activate tabIndex={0}>
               <span className="manifesto-card__number">03</span>
               <div>
                 <p>O que pode nascer</p>
@@ -174,6 +215,19 @@ export default function Home() {
             <span aria-hidden="true">✳</span>
           </div>
         </div>
+      </section>
+
+      <section className="resolution" aria-labelledby="resolution-title" data-motion-section>
+        <p className="overline" data-reveal>Para além do alívio</p>
+        <h2 id="resolution-title" data-reveal>
+          Não apenas aliviar sintomas.
+          <span>Ampliar possibilidades.</span>
+        </h2>
+        <p className="resolution__copy" data-reveal>
+          O objetivo final é favorecer uma adaptação mais saudável, reconstruir
+          o senso de pertencimento e permitir que você viva esta nova etapa com
+          mais equilíbrio, clareza e autenticidade.
+        </p>
       </section>
 
       <section className="process" id="processo" aria-labelledby="process-title" data-motion-section>
@@ -226,7 +280,7 @@ export default function Home() {
 
         <div className="methods__list">
           {methods.map((method) => (
-            <article className="method" key={method.title} data-reveal data-scroll-activate data-tilt tabIndex={0}>
+            <article className="method" key={method.title} data-reveal data-scroll-activate tabIndex={0}>
               <span className="method__eyebrow">Abordagem integrada</span>
               <h3>{method.title}</h3>
               <p>{method.text}</p>
@@ -235,56 +289,22 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="belonging" aria-labelledby="belonging-title" data-motion-section>
-        <div className="belonging__content">
-          <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
-          <h2 id="belonging-title" data-reveal>
-            <span>Pertencer não é voltar.</span>
-            <em>É poder chegar inteira.</em>
+      <section className="contact-form" id="formulario" aria-labelledby="contact-form-title" data-motion-section>
+        <div className="contact-form__intro">
+          <p className="overline" data-reveal>Primeiro contato</p>
+          <h2 id="contact-form-title" data-reveal>
+            Conte o essencial.
+            <span>O WhatsApp já abre pronto.</span>
           </h2>
-          <div className="belonging__columns" data-reveal>
-            <p>
-              Ao longo do processo, investigamos as mudanças na identidade, o
-              pertencimento, os lutos migratórios e os vínculos afetivos e
-              profissionais em seus diferentes contextos culturais.
-            </p>
-            <p>
-              Se você é imigrante, expatriada ou está vivendo uma grande
-              transição de vida, este é um espaço ético, seguro e acolhedor para
-              compreender a sua experiência sem reduzir quem você é a um sintoma.
-            </p>
-          </div>
-          <div className="belonging__actions" data-reveal>
-            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento</a>
-          </div>
+          <p data-reveal>
+            Preencha em poucos passos para enviar uma mensagem mais clara.
+            Você não precisa explicar tudo agora; só o suficiente para começar.
+          </p>
         </div>
 
-        <div className="belonging__media" data-reveal>
-          <img
-            src="/images/claudia-pausa.png"
-            alt="Claudia Thirion em seu espaço de atendimento"
-            width="1024"
-            height="1536"
-            loading="lazy"
-          />
+        <div className="contact-form__panel" data-reveal>
+          <WhatsAppLeadForm />
         </div>
-
-        <div className="belonging__ticker" aria-hidden="true">
-          <span>PERTENCIMENTO</span>
-        </div>
-      </section>
-
-      <section className="resolution" aria-labelledby="resolution-title" data-motion-section>
-        <p className="overline" data-reveal>Para além do alívio</p>
-        <h2 id="resolution-title" data-reveal>
-          Não apenas aliviar sintomas.
-          <span>Ampliar possibilidades.</span>
-        </h2>
-        <p className="resolution__copy" data-reveal>
-          O objetivo final é favorecer uma adaptação mais saudável, reconstruir
-          o senso de pertencimento e permitir que você viva esta nova etapa com
-          mais equilíbrio, clareza e autenticidade.
-        </p>
       </section>
 
       <section className="invitation" id="convite" aria-labelledby="invitation-title" data-motion-section>
@@ -302,6 +322,29 @@ export default function Home() {
             que está acontecendo, entender como posso acompanhar você e sentir,
             com calma, se este caminho faz sentido.
           </p>
+          <div className="invitation__cards" aria-label="Como começar">
+            <article className="invitation-card" data-reveal data-scroll-activate>
+              <span>01</span>
+              <div>
+                <h3>Chegar sem organizar tudo antes</h3>
+                <p>Você pode trazer dúvidas, cansaço, ambivalência ou apenas a sensação de que algo mudou.</p>
+              </div>
+            </article>
+            <article className="invitation-card" data-reveal data-scroll-activate>
+              <span>02</span>
+              <div>
+                <h3>Entender o momento com calma</h3>
+                <p>A conversa ajuda a nomear o que está acontecendo e perceber que tipo de acompanhamento faz sentido.</p>
+              </div>
+            </article>
+            <article className="invitation-card" data-reveal data-scroll-activate>
+              <span>03</span>
+              <div>
+                <h3>Seguir no seu próprio ritmo</h3>
+                <p>Sem fórmulas prontas. O processo é construído a partir da sua história, do seu contexto e da sua vida real.</p>
+              </div>
+            </article>
+          </div>
           <div className="invitation__actions" data-reveal>
             <a
               className="mega-cta magnetic"
@@ -352,11 +395,6 @@ export default function Home() {
       </a>
 
       <footer className="footer" id="rodape" data-motion-section>
-        <div className="footer__topline">
-          <span>Claudia Thirion</span>
-          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
-        </div>
-
         <div className="footer__main">
           <div className="footer__brand">
             <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
@@ -369,7 +407,7 @@ export default function Home() {
           <div className="footer__conversation">
             <p>Quando fizer sentido para você</p>
             <h2>Há um caminho possível para atravessar.</h2>
-            <a className="footer__contact magnetic" data-magnetic href="#convite">
+            <a className="footer__contact magnetic" data-magnetic href="#formulario">
               Agendar conversa
             </a>
           </div>
@@ -380,6 +418,7 @@ export default function Home() {
               <a href="#inicio">Início</a>
               <a href="#processo">O processo</a>
               <a href="#abordagens">Abordagens</a>
+              <a href="#formulario">Contato</a>
             </nav>
             <div className="footer__services">
               <span>Atendimento</span>
@@ -392,7 +431,28 @@ export default function Home() {
 
         <div className="footer__bottom">
           <span>© {new Date().getFullYear()} Claudia Thirion</span>
-          <span>Psicologia Intercultural · EMDR · Brainspotting</span>
+          <div className="footer__social" aria-label="Redes sociais">
+            <a
+              href="https://wa.me/?text=Ol%C3%A1%2C%20Claudia!%20Gostaria%20de%20conhecer%20melhor%20o%20atendimento."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Conversar pelo WhatsApp"
+            >
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M16.03 3.2A12.67 12.67 0 0 0 5.2 22.43L3.5 28.8l6.52-1.67A12.7 12.7 0 1 0 16.03 3.2Zm0 22.98c-2.05 0-4.05-.55-5.8-1.58l-.42-.25-3.87.99 1.03-3.76-.27-.43a10.24 10.24 0 1 1 9.33 5.03Zm5.62-7.67c-.31-.15-1.82-.9-2.1-1-.28-.1-.49-.15-.7.16-.2.3-.8 1-.98 1.2-.18.2-.36.23-.67.08-.3-.15-1.3-.48-2.47-1.53a9.27 9.27 0 0 1-1.7-2.12c-.18-.3-.02-.47.13-.62.14-.14.31-.36.46-.54.16-.18.21-.31.31-.52.1-.2.05-.38-.02-.54-.08-.15-.7-1.67-.95-2.3-.25-.6-.5-.52-.7-.53h-.58c-.2 0-.54.08-.82.39-.28.3-1.08 1.05-1.08 2.56s1.1 2.98 1.26 3.18c.15.2 2.17 3.31 5.25 4.64.74.32 1.31.5 1.76.65.74.23 1.4.2 1.93.12.59-.09 1.82-.75 2.08-1.46.26-.72.26-1.34.18-1.47-.07-.12-.28-.2-.59-.36Z" />
+              </svg>
+            </a>
+            <a
+              href="https://www.instagram.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver Instagram"
+            >
+              <svg viewBox="0 0 32 32" aria-hidden="true">
+                <path d="M10.1 3.8h11.8a6.3 6.3 0 0 1 6.3 6.3v11.8a6.3 6.3 0 0 1-6.3 6.3H10.1a6.3 6.3 0 0 1-6.3-6.3V10.1a6.3 6.3 0 0 1 6.3-6.3Zm0 2.5a3.8 3.8 0 0 0-3.8 3.8v11.8a3.8 3.8 0 0 0 3.8 3.8h11.8a3.8 3.8 0 0 0 3.8-3.8V10.1a3.8 3.8 0 0 0-3.8-3.8H10.1Zm5.9 4.7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm6.1-3.9a1.4 1.4 0 1 1 0 2.8 1.4 1.4 0 0 1 0-2.8Z" />
+              </svg>
+            </a>
+          </div>
           <a className="footer__up" href="#inicio">Voltar ao topo <span aria-hidden="true">↑</span></a>
         </div>
 
@@ -402,9 +462,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <span>Site desenvolvido por</span>
-          <strong>Utopia</strong>
-          <span className="footer__credit-arrow" aria-hidden="true">↗</span>
+          Site desenvolvido por Utopia Digital Lab
         </a>
       </footer>
     </main>
