@@ -4,38 +4,38 @@ import WhatsAppLeadForm from "./whatsapp-lead-form";
 const process = [
   {
     verb: "Escutar",
-    title: "Antes de qualquer método, existe uma história.",
-    text: "Começamos com uma escuta atenta da sua história de vida e profissional: do que mudou, do que permaneceu e do que ainda não encontrou nome.",
+    title: "Começamos pelo que mudou na vida real.",
+    text: "A escuta organiza sua história recente: o que foi rompido, o que permaneceu e o que ainda não encontrou nome.",
   },
   {
     verb: "Mapear",
-    title: "O contexto também fala.",
-    text: "Observamos o contexto cultural, os relacionamentos, os fatores de estresse e os recursos emocionais disponíveis. Nada é analisado fora da vida real.",
+    title: "Identidade, vínculos e cultura entram juntos.",
+    text: "O contexto cultural, os relacionamentos, o estresse e os recursos emocionais são observados como parte da mesma experiência.",
   },
   {
     verb: "Processar",
-    title: "Técnica a serviço da sua singularidade.",
-    text: "A partir dessa compreensão, construímos um plano terapêutico individualizado, integrando Psicologia Intercultural, EMDR e Brainspotting quando indicados.",
+    title: "A técnica entra quando ajuda a avançar.",
+    text: "A partir dessa compreensão, integramos Psicologia Intercultural, EMDR e Brainspotting quando fizer sentido para o seu processo.",
   },
   {
     verb: "Integrar",
-    title: "Não voltar a ser quem era. Voltar a ser sua.",
-    text: "O processo fortalece recursos internos, autorregulação e flexibilidade psicológica para que a mudança deixe de ser apenas ruptura e possa ganhar sentido.",
+    title: "A mudança deixa de ser apenas ruptura.",
+    text: "O objetivo é fortalecer autorregulação, clareza e pertencimento para que esta etapa possa ser vivida com mais presença.",
   },
 ];
 
 const methods = [
   {
     title: "Psicologia Intercultural",
-    text: "Para compreender o que acontece quando identidade, cultura e pertencimento deixam de ocupar o mesmo lugar.",
+    text: "Para compreender como cultura, identidade e pertencimento se reorganizam quando a vida muda de lugar.",
   },
   {
     title: "EMDR",
-    text: "Para favorecer o processamento de experiências emocionalmente marcantes e ampliar a capacidade de autorregulação.",
+    text: "Para favorecer o processamento de experiências marcantes e reduzir a carga emocional que ficou presa no corpo.",
   },
   {
     title: "Brainspotting",
-    text: "Para acessar experiências profundas com presença, segurança e respeito ao ritmo do seu sistema emocional.",
+    text: "Para acessar conteúdos profundos com presença, segurança e respeito ao ritmo do seu sistema emocional.",
   },
 ];
 
@@ -51,6 +51,7 @@ export default function Home() {
         </a>
 
         <nav className="header__nav" aria-label="Navegação principal">
+          <a href="#travessia">Para quem</a>
           <a href="#processo">O processo</a>
           <a href="#abordagens">Abordagens</a>
           <a href="#formulario">Contato</a>
@@ -78,8 +79,8 @@ export default function Home() {
             <span className="hero__line hero__line--accent" data-hero-line>começo.</span>
           </h1>
           <p className="hero__copy" data-reveal>
-            Psicologia para atravessar grandes transições de vida com mais
-            clareza, pertencimento e sentido.
+            Psicologia intercultural para atravessar mudanças de vida,
+            migração e transições identitárias com mais clareza e pertencimento.
           </p>
           <a className="hero__cta magnetic" data-magnetic href="#processo">
             <span>Conhecer o atendimento</span>
@@ -106,13 +107,13 @@ export default function Home() {
         <div className="travessia__stage">
           <p className="travessia__kicker" data-reveal>Quando a vida muda por fora</p>
           <h2 id="travessia-title" data-reveal>
-            “Quero voltar a me sentir <em>eu mesma.</em>”
+            “Eu mudei de lugar, mas ainda estou tentando me encontrar.”
           </h2>
           <div className="travessia__notes">
-            <p data-reveal>“Não sei por que estou tão cansada, irritada ou sem direção.”</p>
+            <p data-reveal>Às vezes a mudança chega como cansaço, irritação, saudade, culpa ou uma sensação difícil de nomear.</p>
             <p data-reveal>
-              Cada pessoa chega com uma história única. Por isso, meu atendimento
-              começa pela escuta, sem fórmulas prontas.
+              Antes de qualquer técnica, existe uma história. O atendimento
+              começa por escutar o que aconteceu com você, e não apenas o sintoma.
             </p>
           </div>
           <a className="travessia__link" href="#processo" data-reveal>
@@ -125,19 +126,18 @@ export default function Home() {
         <div className="belonging__content">
           <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
           <h2 id="belonging-title" data-reveal>
-            <span>Pertencer não é voltar.</span>
-            <em>É poder chegar inteira.</em>
+            <span>Pertencer não é voltar ao que era.</span>
+            <em>É conseguir chegar inteira.</em>
           </h2>
           <div className="belonging__columns" data-reveal>
             <p>
-              Ao longo do processo, investigamos as mudanças na identidade, o
-              pertencimento, os lutos migratórios e os vínculos afetivos e
-              profissionais em seus diferentes contextos culturais.
+              Grandes mudanças reorganizam identidade, pertencimento, lutos
+              migratórios e vínculos afetivos ou profissionais.
             </p>
             <p>
-              Se você é imigrante, expatriada ou está vivendo uma grande
-              transição de vida, este é um espaço ético, seguro e acolhedor para
-              compreender a sua experiência sem reduzir quem você é a um sintoma.
+              Se você é imigrante, expatriada ou atravessa uma transição de vida,
+              este é um espaço para compreender sua experiência sem reduzir quem
+              você é a um sintoma.
             </p>
           </div>
           <div className="belonging__actions" data-reveal>
@@ -161,21 +161,16 @@ export default function Home() {
       </section>
 
       <section className="manifesto" id="integracao" aria-labelledby="manifesto-title" data-motion-section>
-        <div className="manifesto__index" aria-hidden="true">
-          <span>02</span>
-          <span>Integração</span>
-        </div>
         <div className="manifesto__shell">
           <div className="manifesto__heading">
             <p className="overline" data-reveal>Não é sobre se encaixar de novo</p>
             <h2 id="manifesto-title" data-reveal>
-              Você não precisa voltar a caber.
-              <span>Pode criar um lugar novo.</span>
+              A travessia não pede que você se apague.
+              <span>Ela pede integração.</span>
             </h2>
             <p className="manifesto__intro" data-reveal>
-              Mudanças profundas não pedem que você apague versões anteriores.
-              Pedem espaço para reconhecer o que ficou, o que mudou e o que
-              começa a nascer.
+              O processo ajuda a reconhecer o que ficou, o que mudou e o que
+              pode nascer sem forçar uma adaptação artificial.
             </p>
           </div>
 
@@ -184,8 +179,8 @@ export default function Home() {
               <span className="manifesto-card__number">01</span>
               <div>
                 <p>O que ficou</p>
-                <h3>Sua história continua com você.</h3>
-                <span>Ela não precisa ser apagada para que a vida siga.</span>
+                <h3>Sua história segue sendo parte de você.</h3>
+                <span>Ela não precisa ser apagada para que uma nova etapa exista.</span>
               </div>
             </article>
 
@@ -193,8 +188,8 @@ export default function Home() {
               <span className="manifesto-card__number">02</span>
               <div>
                 <p>O que mudou</p>
-                <h3>Novos contextos também transformam.</h3>
-                <span>Identidade, vínculos e a própria forma de pertencer.</span>
+                <h3>Novos contextos também transformam por dentro.</h3>
+                <span>Identidade, vínculos, rotina e a própria forma de pertencer.</span>
               </div>
             </article>
 
@@ -203,7 +198,7 @@ export default function Home() {
               <div>
                 <p>O que pode nascer</p>
                 <h3>Um jeito mais inteiro de seguir.</h3>
-                <span>Com tempo, presença e espaço para ser quem você é agora.</span>
+                <span>Com tempo, presença e espaço para reconhecer quem você é agora.</span>
               </div>
             </article>
           </div>
@@ -220,12 +215,12 @@ export default function Home() {
       <section className="resolution" aria-labelledby="resolution-title" data-motion-section>
         <p className="overline" data-reveal>Para além do alívio</p>
         <h2 id="resolution-title" data-reveal>
-          Não apenas aliviar sintomas.
-          <span>Ampliar possibilidades.</span>
+          Aliviar é importante.
+          <span>Mas não é o ponto final.</span>
         </h2>
         <p className="resolution__copy" data-reveal>
-          O objetivo final é favorecer uma adaptação mais saudável, reconstruir
-          o senso de pertencimento e permitir que você viva esta nova etapa com
+          A proposta é favorecer uma adaptação mais saudável, reconstruir
+          o senso de pertencimento e permitir que você viva esta etapa com
           mais equilíbrio, clareza e autenticidade.
         </p>
       </section>
@@ -239,7 +234,7 @@ export default function Home() {
           </div>
           <div className="process__intro-content">
             <h2 id="process-title" data-reveal>
-              Não existe protocolo <em>para ser você.</em>
+              Um caminho clínico <em>feito com você.</em>
             </h2>
           </div>
         </div>
@@ -273,7 +268,7 @@ export default function Home() {
           <div>
             <p className="overline" data-reveal>Uma integração precisa</p>
             <h2 id="methods-title" data-reveal>
-              Técnica com sensibilidade.<br />Profundidade no seu tempo.
+              Recursos escolhidos com critério.<br />Nunca por protocolo.
             </h2>
           </div>
         </div>
@@ -298,7 +293,8 @@ export default function Home() {
           </h2>
           <p data-reveal>
             Preencha em poucos passos para enviar uma mensagem mais clara.
-            Você não precisa explicar tudo agora; só o suficiente para começar.
+            Você não precisa organizar tudo antes; só trazer o suficiente para
+            começarmos uma conversa com cuidado.
           </p>
         </div>
 
@@ -314,13 +310,12 @@ export default function Home() {
             <span aria-hidden="true">✳</span>
           </div>
           <h2 id="invitation-title" data-reveal>
-            Você pode chegar
-            <span>como está.</span>
+            A primeira conversa
+            <span>não exige certezas.</span>
           </h2>
           <p className="invitation__copy" data-reveal>
-            A primeira conversa não exige certezas. É um espaço para contar o
-            que está acontecendo, entender como posso acompanhar você e sentir,
-            com calma, se este caminho faz sentido.
+            É um espaço para contar o que está acontecendo, entender como posso
+            acompanhar você e sentir, com calma, se este caminho faz sentido.
           </p>
           <div className="invitation__cards" aria-label="Como começar">
             <article className="invitation-card" data-reveal data-scroll-activate>
