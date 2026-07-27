@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
-import { Allura, DM_Sans, Manrope } from "next/font/google";
+import { DM_Sans, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const display = Manrope({
+const display = Plus_Jakarta_Sans({
   variable: "--font-display",
   subsets: ["latin"],
   display: "swap",
@@ -12,13 +12,6 @@ const display = Manrope({
 const sans = DM_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
-  display: "swap",
-});
-
-const script = Allura({
-  variable: "--font-script",
-  subsets: ["latin"],
-  weight: "400",
   display: "swap",
 });
 
@@ -72,7 +65,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className={`${display.variable} ${sans.variable} ${script.variable}`}>{children}</body>
+      <body className={`${display.variable} ${sans.variable}`}>{children}</body>
     </html>
   );
 }

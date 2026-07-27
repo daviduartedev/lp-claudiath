@@ -65,16 +65,16 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title" data-motion-section>
         <div className="hero__media" aria-hidden="true">
           <img
-            src="/images/claudia-hero-main.png"
+            src="/images/hero-premium-claudia-4k.webp"
             alt=""
-            width="1672"
-            height="941"
+            width="3840"
+            height="2160"
             fetchPriority="high"
           />
         </div>
         <div className="hero__content">
           <h1 id="hero-title">
-            <span className="hero__line" data-hero-line>Mudar pode</span>
+            <span className="hero__line" data-hero-line><span className="hero__accent-word">Mudar</span> pode</span>
             <span className="hero__line" data-hero-line>ser um novo</span>
             <span className="hero__line hero__line--accent" data-hero-line>começo.</span>
           </h1>
@@ -123,40 +123,42 @@ export default function Home() {
       </section>
 
       <section className="belonging" aria-labelledby="belonging-title" data-motion-section>
-        <div className="belonging__content">
-          <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
-          <h2 id="belonging-title" data-reveal>
-            <span>Pertencer não é voltar ao que era.</span>
-            <em>É conseguir chegar inteira.</em>
-          </h2>
-          <div className="belonging__columns" data-reveal>
-            <p>
-              Grandes mudanças reorganizam identidade, pertencimento, lutos
-              migratórios e vínculos afetivos ou profissionais.
-            </p>
-            <p>
-              Se você é imigrante, expatriada ou atravessa uma transição de vida,
-              este é um espaço para compreender sua experiência sem reduzir quem
-              você é a um sintoma.
-            </p>
+        <div className="belonging__inner">
+          <div className="belonging__content">
+            <p className="overline" data-reveal>Viver entre culturas também muda quem somos</p>
+            <h2 id="belonging-title" data-reveal>
+              <span>Pertencer não é voltar ao que era.</span>
+              <em>É conseguir chegar inteira.</em>
+            </h2>
+            <div className="belonging__columns" data-reveal>
+              <p>
+                Grandes mudanças reorganizam identidade, pertencimento, lutos
+                migratórios e vínculos afetivos ou profissionais.
+              </p>
+              <p>
+                Se você é imigrante, expatriada ou atravessa uma transição de vida,
+                este é um espaço para compreender sua experiência sem reduzir quem
+                você é a um sintoma.
+              </p>
+            </div>
+            <div className="belonging__actions" data-reveal>
+              <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento</a>
+            </div>
           </div>
-          <div className="belonging__actions" data-reveal>
-            <a className="belonging__cta belonging__cta--primary magnetic" data-magnetic href="#processo">Conhecer o atendimento</a>
-          </div>
-        </div>
 
-        <div className="belonging__media" data-reveal>
-          <img
-            src="/images/claudia-pausa.png"
-            alt="Claudia Thirion em seu espaço de atendimento"
-            width="1024"
-            height="1536"
-            loading="lazy"
-          />
+          <div className="belonging__media" data-reveal>
+            <img
+              src="/images/claudia-pausa.png"
+              alt="Claudia Thirion em seu espaço de atendimento"
+              width="1024"
+              height="1536"
+              loading="lazy"
+            />
+          </div>
         </div>
 
         <div className="belonging__ticker" aria-hidden="true">
-          <span>PERTENCIMENTO</span>
+          <span>PERTENCER</span>
         </div>
       </section>
 
@@ -281,6 +283,54 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="invitation" id="convite" aria-labelledby="invitation-title" data-motion-section>
+        <div className="invitation__media">
+          <div className="invitation__media-sticky">
+            <div className="invitation__photo">
+              <img
+                src="/images/claudia-consultorio.png"
+                alt="Claudia Thirion em seu consultório"
+                width="1024"
+                height="1448"
+                loading="lazy"
+              />
+              <div className="invitation__photo-copy">
+                <h3>Um espaço para atravessar mudanças com cuidado.</h3>
+                <p>Escuta clínica para compreender o que mudou e construir caminhos possíveis no seu ritmo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="invitation__content">
+          <div className="invitation__intro">
+            <div className="invitation__eyebrow" data-reveal>
+              <span>Quando fizer sentido para você</span>
+              <span aria-hidden="true">✳</span>
+            </div>
+            <h2 id="invitation-title" data-reveal>
+              A primeira conversa
+              <span>não exige certezas.</span>
+            </h2>
+          </div>
+
+          <div className="invitation__text-flow" aria-label="Como começar">
+            <div className="invitation__text-block" data-reveal>
+              <h3>Chegar sem <span className="text-pink">organizar</span> tudo antes</h3>
+              <p>Você pode trazer dúvidas, cansaço, ambivalência ou apenas a sensação de que algo mudou.</p>
+            </div>
+            <div className="invitation__text-block" data-reveal>
+              <h3>Entender o <span className="text-pink">momento</span> com <span className="text-pink">calma</span></h3>
+              <p>A conversa ajuda a nomear o que está acontecendo e perceber que tipo de acompanhamento faz sentido.</p>
+            </div>
+            <div className="invitation__text-block" data-reveal>
+              <h3>Seguir no seu <span className="text-pink">próprio ritmo</span></h3>
+              <p>Sem fórmulas prontas. O processo é construído a partir da sua história, do seu contexto e da sua vida real.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="contact-form" id="formulario" aria-labelledby="contact-form-title" data-motion-section>
         <div className="contact-form__intro">
           <p className="overline" data-reveal>Primeiro contato</p>
@@ -297,73 +347,6 @@ export default function Home() {
 
         <div className="contact-form__panel" data-reveal>
           <WhatsAppLeadForm />
-        </div>
-      </section>
-
-      <section className="invitation" id="convite" aria-labelledby="invitation-title" data-motion-section>
-        <div className="invitation__content">
-          <div className="invitation__eyebrow" data-reveal>
-            <span>Quando fizer sentido para você</span>
-            <span aria-hidden="true">✳</span>
-          </div>
-          <h2 id="invitation-title" data-reveal>
-            A primeira conversa
-            <span>não exige certezas.</span>
-          </h2>
-          <div className="invitation__cards" aria-label="Como começar">
-            <article className="invitation-card" data-reveal data-scroll-activate>
-              <span>01</span>
-              <div>
-                <h3>Chegar sem organizar tudo antes</h3>
-                <p>Você pode trazer dúvidas, cansaço, ambivalência ou apenas a sensação de que algo mudou.</p>
-              </div>
-            </article>
-            <article className="invitation-card" data-reveal data-scroll-activate>
-              <span>02</span>
-              <div>
-                <h3>Entender o momento com calma</h3>
-                <p>A conversa ajuda a nomear o que está acontecendo e perceber que tipo de acompanhamento faz sentido.</p>
-              </div>
-            </article>
-            <article className="invitation-card" data-reveal data-scroll-activate>
-              <span>03</span>
-              <div>
-                <h3>Seguir no seu próprio ritmo</h3>
-                <p>Sem fórmulas prontas. O processo é construído a partir da sua história, do seu contexto e da sua vida real.</p>
-              </div>
-            </article>
-          </div>
-          <div className="invitation__actions" data-reveal>
-            <a
-              className="mega-cta magnetic"
-              data-magnetic
-              href="https://wa.me/?text=Ol%C3%A1%2C%20Claudia!%20Gostaria%20de%20agendar%20uma%20primeira%20conversa."
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span>Agendar uma conversa</span>
-            </a>
-            <p>Sem fórmulas prontas.<br />No seu ritmo.</p>
-          </div>
-        </div>
-
-        <div className="invitation__media" data-reveal>
-          <div className="invitation__photo">
-            <img
-              src="/images/claudia-consultorio.png"
-              alt="Claudia Thirion em seu consultório"
-              width="1024"
-              height="1448"
-              loading="lazy"
-            />
-          </div>
-          <div className="invitation__media-note" aria-hidden="true">
-            <span>Presença</span>
-            <i>✳</i>
-            <span>Escuta</span>
-            <i>✳</i>
-            <span>Cuidado</span>
-          </div>
         </div>
       </section>
 
@@ -385,7 +368,7 @@ export default function Home() {
       <footer className="footer" id="rodape" data-motion-section>
         <div className="footer__main">
           <div className="footer__brand">
-            <a className="wordmark wordmark--footer" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
+            <a className="wordmark" href="#inicio" aria-label="Claudia Thirion, voltar ao início">
               <span className="wordmark__mark"><img src="/images/ct-monogram.png" alt="" width="806" height="697" /></span>
               <span className="wordmark__name">Claudia<br />Thirion</span>
             </a>
@@ -413,6 +396,7 @@ export default function Home() {
               <p>Psicologia Intercultural</p>
               <p>EMDR</p>
               <p>Brainspotting</p>
+              <p className="footer__registry">CRP SC 12/13349</p>
             </div>
           </div>
         </div>
