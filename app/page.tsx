@@ -313,10 +313,6 @@ export default function Home() {
             A primeira conversa
             <span>não exige certezas.</span>
           </h2>
-          <p className="invitation__copy" data-reveal>
-            É um espaço para contar o que está acontecendo, entender como posso
-            acompanhar você e sentir, com calma, se este caminho faz sentido.
-          </p>
           <div className="invitation__cards" aria-label="Como começar">
             <article className="invitation-card" data-reveal data-scroll-activate>
               <span>01</span>
