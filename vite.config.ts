@@ -34,6 +34,24 @@ const localBindingConfig = {
 };
 
 export default defineConfig(async () => {
+  const deployTarget =
+    process.env.NITRO_PRESET ??
+    (process.env.VERCEL ? "vercel" : "cloudflare");
+
+  const server = isCodexSeatbeltSandbox
+    ? { watch: { useFsEvents: false, usePolling: true } }
+    : undefined;
+
+  if (deployTarget === "vercel") {
+    const { nitro } = await import("nitro/vite");
+    const tailwindcss = (await import("@tailwindcss/vite")).default;
+
+    return {
+      server,
+      plugins: [tailwindcss(), vinext(), sites(), nitro()],
+    };
+  }
+
   // Keep Wrangler and Miniflare state project-local. These are non-secret tool
   // settings; application environment belongs in ignored `.env*` files.
   process.env.WRANGLER_WRITE_LOGS ??= "false";
@@ -44,9 +62,7 @@ export default defineConfig(async () => {
   const { cloudflare } = await import("@cloudflare/vite-plugin");
 
   return {
-    server: isCodexSeatbeltSandbox
-      ? { watch: { useFsEvents: false, usePolling: true } }
-      : undefined,
+    server,
     plugins: [
       vinext(),
       sites(),
