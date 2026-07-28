@@ -8,11 +8,8 @@
   --ink: #514a46;
   --coffee: #655c57;
   --wine: #756a64;
-  --terracotta: #663f3b;
-  --terracotta-mid: #875047;
-  --terracotta-light: #c5967f;
-  --pink: var(--terracotta-light);
-  --pink-hot: var(--terracotta);
+  --pink: #e7c5ca;
+  --pink-hot: #d99aa6;
   --clay: #b8a89b;
   --line-dark: rgba(81, 74, 70, 0.24);
   --line-light: rgba(251, 248, 242, 0.28);
@@ -249,8 +246,8 @@ h3 {
 
 .header__nav a:hover,
 .header__nav a:focus-visible {
-  color: var(--cream);
-  background: var(--terracotta-mid);
+  color: var(--ink);
+  background: var(--pink);
   transform: translateY(-1px);
 }
 
@@ -265,7 +262,7 @@ h3 {
   padding: 0 22px;
   border: 1px solid var(--pink-hot);
   border-radius: 999px;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--pink-hot);
   font-size: 0.56rem;
   font-weight: 700;
@@ -277,8 +274,8 @@ h3 {
 
 .header__cta:hover,
 .header__cta:focus-visible {
-  color: var(--cream);
-  background: var(--terracotta-mid);
+  color: var(--ink);
+  background: var(--pink);
 }
 
 .hero {
@@ -369,8 +366,8 @@ h3 {
     110deg,
     var(--pink-hot) 0%,
     var(--pink-hot) 34%,
-    var(--terracotta-light) 47%,
-    var(--terracotta-mid) 58%,
+    #f8e4e6 47%,
+    #c97584 58%,
     var(--pink-hot) 72%,
     var(--pink-hot) 100%
   );
@@ -424,7 +421,7 @@ h3 {
   margin-top: 32px;
   padding: 0 28px;
   border-radius: 999px;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--pink-hot);
   align-items: center;
   justify-content: center;
@@ -438,7 +435,7 @@ h3 {
 
 .hero__cta:hover,
 .hero__cta:focus-visible {
-  background: var(--terracotta-mid);
+  background: var(--pink);
 }
 
 .signal {
@@ -446,9 +443,9 @@ h3 {
   z-index: 5;
   width: 100%;
   overflow: hidden;
-  color: var(--cream);
-  background: var(--terracotta);
-  border-bottom: 1px solid rgba(251, 248, 242, 0.28);
+  color: var(--ink);
+  background: var(--pink);
+  border-bottom: 1px solid var(--ink);
 }
 
 .signal__track {
@@ -625,7 +622,7 @@ h3 {
   overflow: clip;
   color: var(--bone);
   background:
-    radial-gradient(circle at 86% 12%, rgba(197, 150, 127, 0.16), transparent 31%),
+    radial-gradient(circle at 86% 12%, rgba(231, 197, 202, 0.16), transparent 31%),
     radial-gradient(circle at 12% 88%, rgba(245, 236, 217, 0.07), transparent 27%),
     var(--ink);
   isolation: isolate;
@@ -638,11 +635,11 @@ h3 {
   z-index: -1;
   width: min(72vw, 1050px);
   aspect-ratio: 1;
-  border: 1px solid rgba(197, 150, 127, 0.16);
+  border: 1px solid rgba(231, 197, 202, 0.16);
   border-radius: 50%;
   box-shadow:
-    0 0 0 8vw rgba(197, 150, 127, 0.025),
-    0 0 0 16vw rgba(197, 150, 127, 0.018);
+    0 0 0 8vw rgba(231, 197, 202, 0.025),
+    0 0 0 16vw rgba(231, 197, 202, 0.018);
   content: "";
   transform: translate3d(var(--motion-x), var(--motion-y), 0) rotate(var(--motion-rotate));
   will-change: transform;
@@ -738,7 +735,7 @@ h3 {
   pointer-events: none;
   opacity: 0;
   background:
-    linear-gradient(135deg, rgba(102, 63, 59, 0.55), transparent 48%),
+    linear-gradient(135deg, rgba(217, 154, 166, 0.55), transparent 48%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.42), transparent 64%);
   content: "";
   transform: translateY(32%) scale(0.92);
@@ -778,8 +775,7 @@ h3 {
   grid-column: auto;
   min-height: clamp(300px, 27vw, 390px);
   margin-top: 0;
-  color: var(--cream);
-  background: var(--terracotta);
+  background: var(--pink);
 }
 
 .manifesto-card > div {
@@ -822,26 +818,26 @@ h3 {
 
 .manifesto-card.is-scroll-active {
   --card-scroll-lift: -5px;
-  border-color: rgba(102, 63, 59, 0.62);
+  border-color: rgba(217, 154, 166, 0.62);
 }
 
 .manifesto-card:is(:hover, :focus-visible) {
   --card-scroll-lift: -12px;
   --card-scale: 1.018;
-  color: var(--cream);
+  color: var(--ink);
   border-color: var(--pink-hot);
   background: var(--pink-hot);
 }
 
 .manifesto-card:is(:hover, :focus-visible) > div > p {
-  color: var(--terracotta-light);
+  color: var(--wine);
   opacity: 1;
   transform: translateY(-4px);
 }
 
 .manifesto-card:is(:hover, :focus-visible) h3,
 .manifesto-card:is(:hover, :focus-visible) > div > span {
-  color: var(--cream);
+  color: var(--ink);
   opacity: 1;
   transform: translateY(-4px);
 }
@@ -871,7 +867,7 @@ h3 {
   padding: 0 24px;
   border: 1px solid var(--pink-hot);
   border-radius: 999px;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--pink-hot);
   align-items: center;
   justify-content: center;
@@ -885,8 +881,8 @@ h3 {
 
 .manifesto__actions > a:hover,
 .manifesto__actions > a:focus-visible {
-  color: var(--cream);
-  background: var(--terracotta-mid);
+  color: var(--ink);
+  background: var(--pink);
 }
 
 .manifesto__actions > span {
@@ -982,7 +978,7 @@ h3 {
 .process__chapter::before {
   position: absolute;
   inset: 0;
-  background: var(--terracotta);
+  background: var(--pink);
   content: "";
   transform: scaleY(0);
   transform-origin: bottom;
@@ -990,11 +986,7 @@ h3 {
 }
 
 .process__chapter:is(:hover, .is-scroll-active) {
-  color: var(--cream);
-}
-
-.process__chapter:is(:hover, .is-scroll-active) .process__verb {
-  color: var(--terracotta-light);
+  color: var(--ink);
 }
 
 .process__chapter:is(:hover, .is-scroll-active)::before {
@@ -1140,7 +1132,7 @@ h3 {
 .method.is-scroll-active {
   --method-lift: -5px;
   --method-scale: 1.006;
-  border-color: rgba(102, 63, 59, 0.7);
+  border-color: rgba(217, 154, 166, 0.7);
 }
 
 .method:is(:hover, :focus-visible) {
@@ -1220,7 +1212,7 @@ h3 {
 
 @media (hover: none) {
   .manifesto-card.is-scroll-active {
-    color: var(--cream);
+    color: var(--ink);
     border-color: var(--pink-hot);
     background: var(--pink-hot);
   }
@@ -1228,7 +1220,7 @@ h3 {
   .manifesto-card.is-scroll-active > div > p,
   .manifesto-card.is-scroll-active h3,
   .manifesto-card.is-scroll-active > div > span {
-    color: var(--cream);
+    color: var(--ink);
     opacity: 1;
   }
 
@@ -1277,8 +1269,8 @@ h3 {
   overflow: hidden;
   color: var(--ink);
   background:
-    radial-gradient(circle at 88% 4%, rgba(102, 63, 59, 0.34), transparent 34%),
-    radial-gradient(circle at 6% 94%, rgba(135, 80, 71, 0.34), transparent 38%),
+    radial-gradient(circle at 88% 4%, rgba(217, 154, 166, 0.34), transparent 34%),
+    radial-gradient(circle at 6% 94%, rgba(231, 197, 202, 0.48), transparent 38%),
     var(--cream);
   align-items: center;
   isolation: isolate;
@@ -1294,7 +1286,7 @@ h3 {
   border: 1px solid rgba(81, 74, 70, 0.12);
   border-radius: 50%;
   box-shadow:
-    0 0 0 7vw rgba(102, 63, 59, 0.055),
+    0 0 0 7vw rgba(217, 154, 166, 0.055),
     0 0 0 14vw rgba(81, 74, 70, 0.025);
   content: "";
   transform: translate3d(var(--motion-x), var(--motion-y-soft), 0);
@@ -1418,7 +1410,7 @@ h3 {
 .lead-form textarea:focus {
   border-color: var(--pink-hot);
   background: #fff;
-  box-shadow: 0 0 0 4px rgba(102, 63, 59, 0.18);
+  box-shadow: 0 0 0 4px rgba(217, 154, 166, 0.18);
 }
 
 .lead-form fieldset {
@@ -1466,9 +1458,9 @@ h3 {
 
 .lead-form__choices input:checked + span,
 .lead-form__choices label:focus-within > span {
-  color: var(--cream);
+  color: var(--ink);
   border-color: var(--pink-hot);
-  background: var(--terracotta);
+  background: var(--pink);
 }
 
 .lead-form__submit {
@@ -1479,7 +1471,7 @@ h3 {
   min-height: 66px;
   border: 0;
   border-radius: 999px;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--pink-hot);
   cursor: pointer;
   align-items: center;
@@ -1494,7 +1486,7 @@ h3 {
 
 .lead-form__submit:hover,
 .lead-form__submit:focus-visible {
-  background: var(--terracotta-mid);
+  background: var(--pink);
 }
 
 .belonging {
@@ -1606,7 +1598,7 @@ h3 {
 .belonging__cta--primary {
   --magnetic-x: 0px;
   --magnetic-y: 0px;
-  color: var(--cream);
+  color: var(--ink);
   border-color: var(--pink-hot);
   background: var(--pink-hot);
   transform: translate(var(--magnetic-x), var(--magnetic-y));
@@ -1614,8 +1606,8 @@ h3 {
 
 .belonging__cta:hover,
 .belonging__cta:focus-visible {
-  color: var(--cream);
-  background: var(--terracotta-mid);
+  color: var(--ink);
+  background: var(--pink);
 }
 
 .belonging__ticker {
@@ -1639,8 +1631,8 @@ h3 {
   min-height: 100svh;
   padding: clamp(100px, 10vw, 170px) clamp(24px, 5vw, 92px);
   overflow: hidden;
-  color: var(--cream);
-  background: var(--terracotta);
+  color: var(--ink);
+  background: var(--pink);
   flex-direction: column;
   justify-content: center;
 }
@@ -1651,10 +1643,10 @@ h3 {
   right: -10vw;
   width: 65vw;
   aspect-ratio: 1;
-  border: 1px solid rgba(251, 248, 242, 0.22);
+  border: 1px solid rgba(98,89,83,0.35);
   border-radius: 50%;
   content: "";
-  box-shadow: 0 0 0 6vw rgba(251, 248, 242, 0.035), 0 0 0 12vw rgba(251, 248, 242, 0.022);
+  box-shadow: 0 0 0 6vw rgba(98,89,83,0.05), 0 0 0 12vw rgba(98,89,83,0.035);
   transform: translate3d(var(--motion-x), var(--motion-y), 0) rotate(var(--motion-rotate));
   will-change: transform;
 }
@@ -1669,21 +1661,13 @@ h3 {
   display: block;
   margin-top: 0.08em;
   padding-bottom: 0.2em;
-  color: var(--terracotta-light);
+  color: var(--ink);
   font-family: var(--font-display), "Helvetica Neue", Arial, sans-serif;
   font-size: 0.8em;
   font-style: normal;
   font-weight: 650;
   letter-spacing: -0.055em;
   line-height: 1;
-}
-
-.resolution .overline {
-  color: rgba(251, 248, 242, 0.72);
-}
-
-.resolution .overline::after {
-  color: var(--terracotta-light);
 }
 
 .resolution__copy {
@@ -1704,7 +1688,7 @@ h3 {
   padding: clamp(92px, 9vw, 150px) clamp(24px, 5vw, 92px);
   overflow: visible;
   background:
-    radial-gradient(circle at 8% 92%, rgba(102, 63, 59, 0.18), transparent 27%),
+    radial-gradient(circle at 8% 92%, rgba(231, 197, 202, 0.28), transparent 27%),
     var(--cream);
   align-items: start;
   isolation: isolate;
@@ -1987,7 +1971,7 @@ h3 {
   overflow: hidden;
   color: var(--bone);
   background:
-    radial-gradient(circle at 14% 110%, rgba(197, 150, 127, 0.12), transparent 34%),
+    radial-gradient(circle at 14% 110%, rgba(231, 197, 202, 0.12), transparent 34%),
     var(--ink);
   isolation: isolate;
 }
@@ -2063,7 +2047,7 @@ h3 {
   margin-top: clamp(38px, 5vw, 60px);
   padding: 0 26px;
   border-radius: 999px;
-  color: var(--cream);
+  color: var(--ink);
   background: var(--pink-hot);
   align-items: center;
   font-size: 0.59rem;
@@ -2076,7 +2060,7 @@ h3 {
 
 .footer__contact:hover,
 .footer__contact:focus-visible {
-  background: var(--terracotta-mid);
+  background: var(--pink);
 }
 
 .footer__directory {
@@ -2133,7 +2117,7 @@ h3 {
   margin-top: 10px;
   padding-top: 16px;
   color: var(--pink);
-  border-top: 1px solid rgba(197, 150, 127, 0.24);
+  border-top: 1px solid rgba(231, 197, 202, 0.24);
   font-size: 0.62rem;
   font-weight: 800;
   letter-spacing: 0.1em;
@@ -2177,9 +2161,9 @@ h3 {
 
 .footer__social a:hover,
 .footer__social a:focus-visible {
-  color: var(--cream);
-  border-color: var(--terracotta);
-  background: var(--terracotta);
+  color: var(--ink);
+  border-color: var(--pink);
+  background: var(--pink);
   transform: translateY(-4px);
 }
 
@@ -2208,8 +2192,8 @@ h3 {
 
 .footer__up:hover span,
 .footer__up:focus-visible span {
-  color: var(--cream);
-  background: var(--terracotta);
+  color: var(--ink);
+  background: var(--pink);
   transform: translateY(-4px);
 }
 
